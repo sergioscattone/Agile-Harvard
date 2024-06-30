@@ -1,4 +1,4 @@
-# Agile Harvard - Team Rocket Team - Provisory Name
+# Agile Harvard - Flex Fit Team
 ## Roles
 | Name          | Role |
 | ------------- | ------------- |
