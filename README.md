@@ -3,8 +3,8 @@
 | Name          | Role |
 | ------------- | ------------- |
 | Sergio Scattone | Developer / Scrum Master  |
-| Marco Vazquez   | Developer  |
-| Ziyuan Li | Product Owner  |
+| Marco Vazquez   | Product Owner  |
+| Ziyuan Li | Developer  |
 | Zhang Xingjian | Developer  |
 ## Project Vision
 bla bla bla bla
