@@ -7,17 +7,17 @@
 | Ziyuan Li | Developer  |
 | Zhang Xingjian | Developer  |
 ## Project Vision
-bla bla bla bla
+Create an easy to use app that provides workout plans for users.
 ## Far Vision
-bla bla bla bla
+Provide personalized fitness plans worldwide.
 ## Near Vision
-bla bla bla bla
+Provide customisable workout plans to Universities.
 ## Stakeholders
 | Stakeholder          | Description |
 | ------------- | ------------- |
-| Jhon Doel | bla bla  |
-| Stephany McWeather  | bla bla  |
-| Richard Jhonson | bla bla  |
+| Students learning to workout | bla bla  |
+| Professors trying to stay healthy  | bla bla  |
+| Non-university people trying to lose weight | bla bla  |
 ## Stakeholder Persona: Stephany McWeather
 Has to be a real person bla bla bla bla
 ## Scrum management:
