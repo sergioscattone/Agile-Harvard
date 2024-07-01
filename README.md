@@ -18,7 +18,7 @@ Provide customisable workout plans to Universities.
 | Students learning to workout | Students at Harvard that may want to exercise during their studies |
 | Professors trying to stay healthy  | Professors at Harvard that want to regularly exercise |
 | Non-university people trying to lose weight | Casual people that may be interested in start practicing exercises  |
-## Stakeholder Persona: Pending...
-Has to be a real person bla bla bla bla
+## Stakeholder Persona: Jie Yang
+![User Persona Jie Yang](user_persona.png)
 ## Scrum management:
 Link to Miro board: https://miro.com/app/board/uXjVK3fDWVI=/
