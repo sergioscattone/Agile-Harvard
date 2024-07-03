@@ -28,6 +28,7 @@ Link to Miro board: https://miro.com/app/board/uXjVK3fDWVI=/
 # First sprint
 ## First backlog refinement: (whole-team relative-size estimating activity)
 | User Story	| Sergio estimation	| Ziyuan Li estimation	| Zhang Xingjian	| Final estimation |
+| ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Show exercieses	| 5	| 3	| 8	| 5 |
 | Show example workouts	5	| 5	| 8 |	5 |
 | Show created workouts	2	| 3	| 3	| 3 |
