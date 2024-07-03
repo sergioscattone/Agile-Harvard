@@ -58,3 +58,7 @@ https://docs.google.com/spreadsheets/d/1jOZ38mANGoOLkpzMHCnREkxw2VdNjMLCFFSqwA6G
 | Name          | What have you done so far | What you plan to do today | Any Blockers |
 | ------------- | ------------- | ------------- | ------------- |
 | Sergio Scattone | Created digital ocean environment with a flash running env pulled from github | create a set of test and maybe create the sqlite db schema | short amount of time |
+
+## Evidence of Pair Programming
+![Uploading image.png…]()
+
