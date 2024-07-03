@@ -53,3 +53,13 @@ Link to Miro board: https://miro.com/app/board/uXjVK3fDWVI=/
 
 ## Burdown link
 https://docs.google.com/spreadsheets/d/1jOZ38mANGoOLkpzMHCnREkxw2VdNjMLCFFSqwA6GPnE/edit?gid=0#gid=0
+
+## First Sprint: Standup Meeting - Wed 3 (third day of sprint)
+| Name          | What have you done so far | What you plan to do today | Any Blockers |
+| ------------- | ------------- | ------------- | ------------- |
+| Sergio Scattone | Created digital ocean environment with a flash running env pulled from github | create a set of test and maybe create the sqlite db schema | short amount of time |
+
+## Evidence of Pair Programming
+![image](https://github.com/sergioscattone/Agile-Harvard/assets/28077819/5abd4e72-21c3-4849-bfd2-87507202e17d)
+
+
