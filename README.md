@@ -50,3 +50,6 @@ Link to Miro board: https://miro.com/app/board/uXjVK3fDWVI=/
 - Xingjian: We don't have data to compare with
 - Xingjian: It's a new team
 - Sergio: Week has a holiday
+
+## Burdown link
+https://docs.google.com/spreadsheets/d/1jOZ38mANGoOLkpzMHCnREkxw2VdNjMLCFFSqwA6GPnE/edit?gid=0#gid=0
