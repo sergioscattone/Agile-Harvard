@@ -72,7 +72,7 @@ https://docs.google.com/spreadsheets/d/1jOZ38mANGoOLkpzMHCnREkxw2VdNjMLCFFSqwA6G
 [Test File](tests/test_app.py)
 
 ## Sprint review - Feedback from Stakeholder
-[feedback](feedback.png)
+![feedback](feedback.png)
 Translated: "It is recommended to enrich the content, increase the graphical interface, and improve user friendliness."
 
 ## Sprint Retrospective:
