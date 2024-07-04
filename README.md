@@ -32,8 +32,8 @@ Link to Miro board: https://miro.com/app/board/uXjVK3fDWVI=/
 | User Story	| Sergio estimation	| Ziyuan Li estimation	| Zhang Xingjian	| Final estimation |
 | ------------- | ------------- | ------------- | ------------- | ------------- |
 | Show exercieses	| 5	| 3	| 8	| 5 |
-| Show example workouts	5	| 5	| 8 |	5 |
-| Show created workouts	2	| 3	| 3	| 3 |
+| Show example workouts	| 5	| 5	| 8 |	5 |
+| Show created workouts	| 2	| 3	| 3	| 3 |
 | Improve user interface	| 2	| 3	| 3	| 3 |
 | Show history of exercises	| 3	| 2 |	2 |	3 |
 | Repeat previous exercises	| 3	| 2	| 3	| 3 |
@@ -65,6 +65,10 @@ https://docs.google.com/spreadsheets/d/1jOZ38mANGoOLkpzMHCnREkxw2VdNjMLCFFSqwA6G
 | Ziyuan | Research on Python Flask, ready for writing test cases for our product | Has written several test cases, then pass them successfully |
 | Xingjian | I learned about flask and tried to built some simple projects on my own | Try to be familiar with the code further and try to write test cases |
 | Marco | looked up how to use python flask to create a backend and simple html website | I am planning on adding basic unit tests today and a second page with a list of exercises | sprint is during holiday, so might have to only focus on critical tasks |
+
+## Ideas about how to deal with impediments
+We have decided to focus on core aspects of the application given there is a holiday during the sprint.
+Also we are using pre and post class time to have meetings and do mob programming.
 
 ## Evidence of Pair Programming
 ![pair programming](https://github.com/sergioscattone/Agile-Harvard/assets/28077819/5abd4e72-21c3-4849-bfd2-87507202e17d)
