@@ -73,7 +73,8 @@ https://docs.google.com/spreadsheets/d/1jOZ38mANGoOLkpzMHCnREkxw2VdNjMLCFFSqwA6G
 
 ## Sprint review - Feedback from Stakeholder
 ![feedback](feedback.png)
-Translated: "It is recommended to enrich the content, increase the graphical interface, and improve user friendliness."
+### Translated:
+"It is recommended to enrich the content, increase the graphical interface, and improve user friendliness."
 
 ## Sprint Retrospective:
 | Name          | What went well | What went wrong | Action Items |
