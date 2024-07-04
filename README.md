@@ -71,9 +71,9 @@ https://docs.google.com/spreadsheets/d/1jOZ38mANGoOLkpzMHCnREkxw2VdNjMLCFFSqwA6G
 ## TDD: Set of unit test attached to CI in Digital Ocean
 [Test File](tests/test_app.py)
 
-## Sprint review - Feedback from Stakeholder (pending translation)
-![feedback_1](feedback_1.png)
-![feedback_2](feedback_2.png)
+## Sprint review - Feedback from Stakeholder
+[feedback](feedback.png)
+Translated: "It is recommended to enrich the content, increase the graphical interface, and improve user friendliness."
 
 ## Sprint Retrospective:
 | Name          | What went well | What went wrong | Action Items |
