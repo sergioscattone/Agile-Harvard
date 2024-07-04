@@ -65,6 +65,6 @@ https://docs.google.com/spreadsheets/d/1jOZ38mANGoOLkpzMHCnREkxw2VdNjMLCFFSqwA6G
 | Marco | looked up how to use python flask to create a backend and simple html website | I am planning on adding basic unit tests today and a second page with a list of exercises |
 
 ## Evidence of Pair Programming
-![image](https://github.com/sergioscattone/Agile-Harvard/assets/28077819/5abd4e72-21c3-4849-bfd2-87507202e17d)
-
+![pair programming](https://github.com/sergioscattone/Agile-Harvard/assets/28077819/5abd4e72-21c3-4849-bfd2-87507202e17d)
+![mob programming](mob_programming.png)
 
