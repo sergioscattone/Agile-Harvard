@@ -18,10 +18,8 @@ class Exercise(db.Model):
 with app.app_context():
     db.create_all()
 
-@app.route('/exercise', methods=['POST'])
-def exercise_form():
-    # name = request.form['name']
-    # sites = ["Bicep Curl", "Jacknife Situps", ""]
+@app.route('/exercises')
+def exercises():
     exercise = Exercise.query.all()
     return render_template("exercises.html", sites=exercise)
 
@@ -32,10 +30,12 @@ def site_detail(site_name):
     site_name_clean = site_name.replace(" ", "_")
     return render_template('exercise_details.html', site_name=site_name_clean)
 
+@app.route('/workloads')
+def workloads():
+    return "Section still under construction :)"
 
 @app.route('/')
-def hello_world():
-    # return 'Welcome to Flex Fit!'
+def landscape():
     return render_template('index.html')
 
 

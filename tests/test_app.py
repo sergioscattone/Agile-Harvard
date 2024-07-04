@@ -38,13 +38,13 @@ def test_welcome_title(client):
 # check submit page exists
 def test_exercise_page(client):
     """Test list page"""
-    rv = client.post('/exercise')
+    rv = client.post('/exercises')
     assert rv.status_code == 200
 
 
 # check that there is at least 1 exercise in the list
 def test_check_exercises_number(client):
-    rv = client.post('/exercise')
+    rv = client.post('/exercises')
     sites = get_context_variable(rv.data, b'sites')
     assert len(sites) >= 1
 
