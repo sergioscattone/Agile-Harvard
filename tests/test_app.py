@@ -26,7 +26,7 @@ def testing_framework_works():
 def test_welcome_page(client):
     """Test welcome page"""
     rv = client.get('/')
-    assert rv.response == 200
+    assert rv.status_code == 200
 
 
 def test_welcome_title(client):
