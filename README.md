@@ -13,7 +13,7 @@ https://agilesoftwarecourse.slack.com/archives/C07AEDC601G
 ## Project Vision
 Create an easy to use app that provides workout plans for users.
 ## Far Vision
-Provide personalized fitness plans worldwide.
+Improve fitness and health worldwide.
 ## Near Vision
 Provide customisable workout plans to Universities.
 ## Stakeholders
