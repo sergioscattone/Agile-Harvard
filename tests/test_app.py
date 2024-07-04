@@ -57,3 +57,15 @@ def test_exercise_bicep_curl_details_page(client):
 def test_exercise_jackknife_situps_details_page(client):
     rv = client.get('/site/Jacknife_Situps')
     assert rv.status_code == 200
+
+def test_exercise_jogging_details_page(client):
+    rv = client.get('/site/Jogging')
+    assert rv.status_code == 200
+
+def test_exercise_hiking_details_page(client):
+    rv = client.get('/site/Hiking')
+    assert rv.status_code == 200
+
+def test_exercise_table_tennis_page(client):
+    rv = client.get('/site/Table_Tennis')
+    assert rv.status_code == 200

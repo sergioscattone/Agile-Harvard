@@ -6,7 +6,7 @@ app = Flask(__name__)
 @app.route('/exercise', methods=['POST'])
 def exercise_form():
     # name = request.form['name']
-    sites = ["Bicep Curl", "Jacknife Situps"]
+    sites = ["Bicep Curl", "Jacknife Situps", "Swimming", "Jogging", "Hiking", "Table Tennis"]
     return render_template("exercises.html", sites=sites)
 
 
