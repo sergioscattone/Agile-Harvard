@@ -10,7 +10,7 @@
     {% block body %}
            <ul>
                {% for exercise in sites %}
-                   <li><a href="{{ url_for('site_detail', site_name=exercise.replace(' ', '_')) }}">{{ exercise }}</a></li>
+                   <li><a href="{{ url_for('site_detail', site_name=exercise.exercise.replace(' ', '_')) }}">{{ exercise }}</a></li>
                {% endfor %}
            </ul>
     {% endblock %}

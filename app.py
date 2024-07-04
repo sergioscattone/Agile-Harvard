@@ -1,13 +1,24 @@
 from flask import Flask, render_template, request
+from flask_sqlalchemy import SQLAlchemy
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+db = SQLAlchemy(app)
 
+class Exercise(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    exercise = db.Column(db.String(120), unique=True, nullable=False)
+
+    def __repr__(self):
+        return f' {self.exercise}'
 # Define a route for handling the form submission
 @app.route('/exercise', methods=['POST'])
 def exercise_form():
     # name = request.form['name']
-    sites = ["Bicep Curl", "Jacknife Situps"]
-    return render_template("exercises.html", sites=sites)
+    # sites = ["Bicep Curl", "Jacknife Situps", ""]
+    exercise = Exercise.query.all()
+    return render_template("exercises.html", sites=exercise)
 
 
 @app.route('/site/<site_name>')
