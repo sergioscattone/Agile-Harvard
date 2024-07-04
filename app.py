@@ -1,10 +1,12 @@
 from flask import Flask, render_template, request
 from flask_sqlalchemy import SQLAlchemy
+import sqlite3
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 db = SQLAlchemy(app)
+
 
 class Exercise(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -12,7 +14,10 @@ class Exercise(db.Model):
 
     def __repr__(self):
         return f' {self.exercise}'
-# Define a route for handling the form submission
+
+with app.app_context():
+    db.create_all()
+
 @app.route('/exercise', methods=['POST'])
 def exercise_form():
     # name = request.form['name']
