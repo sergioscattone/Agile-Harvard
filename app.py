@@ -26,9 +26,9 @@ def exercises():
 
 
 @app.route('/exercises/<exercise_name>')
-def exercise_detail(site_name):
+def exercise_detail(exercise_name):
     # Replace spaces with underscores in site_name
-    exercise_name_clean = site_name.replace(" ", "_")
+    exercise_name_clean = exercise_name.replace(" ", "_")
     return render_template('exercise_details.html', exercise_name=exercise_name_clean)
 
 @app.route('/workloads')
