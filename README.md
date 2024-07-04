@@ -68,3 +68,17 @@ https://docs.google.com/spreadsheets/d/1jOZ38mANGoOLkpzMHCnREkxw2VdNjMLCFFSqwA6G
 ![pair programming](https://github.com/sergioscattone/Agile-Harvard/assets/28077819/5abd4e72-21c3-4849-bfd2-87507202e17d)
 ![mob programming](mob_programming.png)
 
+## TDD: Set of unit test attached to CI in Digital Ocean
+[Test File](tests/test_app.py)
+
+## Sprint review - Feedback from Stakeholder (pending translation)
+![feedback_1](feedback_1.png)
+![feedback_2](feedback_2.png)
+
+## Sprint Retrospective:
+| Name          | What went well | What went wrong | Action Items |
+| ------------- | ------------- | ------------- | ------------- |
+| Sergio | Even though our team didn't have a lot of experience in web development we were able to create a MVP | Implementing DB usage was more complicated than we have originally thought | Next sprint we can take DB management first to reduce risks |
+| Ziyuan |  |  |
+| Xingjian |  |  |
+| Marco |  |  |
