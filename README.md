@@ -6,6 +6,8 @@
 | Marco Vazquez   | Product Owner  |
 | Ziyuan Li | Developer  |
 | Zhang Xingjian | Developer  |
+## APP URL
+https://octopus-app-h8uaj.ondigitalocean.app/
 ## Slack Channel
 https://agilesoftwarecourse.slack.com/archives/C07AEDC601G
 ## Project Vision
