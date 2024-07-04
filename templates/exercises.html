@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Simple Flask App</title>
+    <title>List of exercises</title>
 </head>
 <body>
     <h1>Exercise List</h1>
     {% block body %}
            <ul>
                {% for exercise in exercises %}
-                   <li><a href="{{ url_for('site_detail', site_name=exercise.exercise.replace(' ', '_')) }}">{{ exercise }}</a></li>
+                   <li><a href="{{ url_for('exercise_detail', exercise_name=exercise.replace(' ', '_')) }}">{{ exercise }}</a></li>
                {% endfor %}
            </ul>
     {% endblock %}

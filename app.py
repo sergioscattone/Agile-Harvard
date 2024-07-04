@@ -20,16 +20,16 @@ with app.app_context():
 
 @app.route('/exercises')
 def exercises():
-    exercises = db.exercise.query.all()
-    return print(exercises)
-    #return render_template("exercises.html", exercises=exercises)
+    #exercises = db.exercise.query.all()
+    exercises = ["Bicep Curl", "Jacknife Situps", "Swimming", "Jogging", "Hiking", "Table Tennis"]
+    return render_template("exercises.html", exercises=exercises)
 
 
-@app.route('/site/<site_name>')
-def site_detail(site_name):
+@app.route('/exercises/<exercise_name>')
+def exercise_detail(site_name):
     # Replace spaces with underscores in site_name
-    site_name_clean = site_name.replace(" ", "_")
-    return render_template('exercise_details.html', site_name=site_name_clean)
+    exercise_name_clean = site_name.replace(" ", "_")
+    return render_template('exercise_details.html', exercise_name=exercise_name_clean)
 
 @app.route('/workloads')
 def workloads():
