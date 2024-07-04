@@ -1,0 +1,18 @@
+
+<!-- templates/exercises.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Flask App</title>
+</head>
+<body>
+    <h1>Exercise List</h1>
+    {% block body %}
+           <ul>
+               {% for exercise in sites %}
+                   <li><a href="{{ url_for('site_detail', site_name=exercise.replace(' ', '_')) }}">{{ exercise }}</a></li>
+               {% endfor %}
+           </ul>
+    {% endblock %}
+</body>
+</html>
