@@ -21,7 +21,8 @@ with app.app_context():
 @app.route('/exercises')
 def exercises():
     exercises = db.exercise.query.all()
-    return render_template("exercises.html", exercises=exercises)
+    return print(exercises)
+    #return render_template("exercises.html", exercises=exercises)
 
 
 @app.route('/site/<site_name>')
