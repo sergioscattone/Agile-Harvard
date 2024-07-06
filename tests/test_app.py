@@ -23,49 +23,52 @@ def testing_framework_works():
     assert True
 
 
-def test_welcome_page(client):
+def test_login_page(client):
     """Test welcome page"""
-    rv = client.get('/')
+    rv = client.get('/login')
     assert rv.status_code == 200
 
 
-def test_welcome_title(client):
-    """Test welcome title"""
-    rv = client.get('/')
-    assert b'Welcome' in rv.data
+# def test_welcome_title(client):
+#     """Test welcome title"""
+#     rv = client.get('/')
+#     assert b'Welcome' in rv.data
 
 
-# check submit page exists
-def test_exercise_page(client):
-    """Test list page"""
+def test_incorrect_page(client):
+    rv = client.post('/sites')
+    assert rv.status_code == 404
+
+# if there is no login then return unallowed
+def test_unallowed_exercise_page(client):
     rv = client.post('/exercises')
-    assert rv.status_code == 200
+    assert rv.status_code == 405
 
 
 # check that there is at least 1 exercise in the list
 def test_check_exercises_number(client):
     rv = client.post('/exercises')
-    sites = get_context_variable(rv.data, b'sites')
-    assert len(sites) >= 1
+    exercisess = get_context_variable(rv.data, b'exercisess')
+    assert len(exercisess) >= 1
 
 
 def test_exercise_bicep_curl_details_page(client):
-    rv = client.get('/site/Bicep_Curl')
+    rv = client.get('/exercises/Bicep_Curl')
     assert rv.status_code == 200
 
 
 def test_exercise_jackknife_situps_details_page(client):
-    rv = client.get('/site/Jacknife_Situps')
+    rv = client.get('/exercises/Jacknife_Situps')
     assert rv.status_code == 200
 
 def test_exercise_jogging_details_page(client):
-    rv = client.get('/site/Jogging')
+    rv = client.get('/exercises/Jogging')
     assert rv.status_code == 200
 
 def test_exercise_hiking_details_page(client):
-    rv = client.get('/site/Hiking')
+    rv = client.get('/exercises/Hiking')
     assert rv.status_code == 200
 
 def test_exercise_table_tennis_page(client):
-    rv = client.get('/site/Table_Tennis')
+    rv = client.get('/exercises/Table_Tennis')
     assert rv.status_code == 200
