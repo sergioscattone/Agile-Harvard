@@ -1,7 +1,8 @@
 from typing import List
-from excercise import Exercise
+from exercise import Exercise
 
-class Workload():
+
+class Workload:
     def __init__(self, id: int, exercises: List[Exercise], description: str):
         self.id = id
         self.exercises = exercises
@@ -14,11 +15,11 @@ class Workload():
     def remove(self, exercise):
         self.exercises.remove(exercise)
         return self
-    
+
     def find(self, exercise_id: int):
         for exercise in self.exercises:
             if exercise.id == exercise_id:
                 return exercise
 
     def __repr__(self):
-        return f' {self.exercise}'
+        return f' {self.exercises}'

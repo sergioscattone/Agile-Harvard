@@ -44,7 +44,7 @@ Link to Miro board: https://miro.com/app/board/uXjVK3fDWVI=/
 | Store my habits	| 5	| 3	| 3	| 3 |
 | Organize my exercise	| 5	| 3	| 3	| 3 |
 | Sharing my exercises	| 2	| 2	| 2	| 2 |
-| Show videos of excercises	| 3	| 2	| 2	| 2 |
+| Show videos of exercises	| 3	| 2	| 2	| 2 |
 
 ## Estimated Velocity
 5
