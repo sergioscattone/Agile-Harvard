@@ -121,47 +121,27 @@ class Testing(unittest.TestCase):
     def test_create_user(self):
         id = 1
         email = "user@email.com"
-        first_name = "FirstName"
-        last_name = "LastName"
-        user = User(id, email, first_name, last_name)
+        password = "password"
+        user = User(email, password)
 
-        self.assertEqual(id, user.id, "User ID does not match")
         self.assertEqual(email, user.email, "User email does not match")
-        self.assertEqual(first_name, user.first_name, "Exercise first name does not match")
-        self.assertEqual(last_name, user.last_name, "Exercise last name does not match")
-
-    # test the update of an user
+        self.assertEqual(password, user.password, "User password does not match")
+        
+    # test if user is able to login
     def test_update_user(self):
-        id = 1
         email = "user@email.com"
-        first_name = "FirstName"
-        last_name = "LastName"
-        user = User(id, email, first_name, last_name)
+        password = "password"
+        user = User(email, password)
 
-        # here we assert the field values are the original ones
-        self.assertEqual(id, user.id, "User ID does not match")
-        self.assertEqual(email, user.email, "User email does not match")
-        self.assertEqual(first_name, user.first_name, "Exercise first name does not match")
-        self.assertEqual(last_name, user.last_name, "Exercise last name does not match")
-
-        first_name_modified = "FirstNameModified"
-        last_name_modified = "LastNameModified"
-        user.update(first_name_modified, last_name_modified)
-
-        # here we validate that only the first name and last name were update
-        # and nothing else since the update method only accepts those fields to change
-        self.assertEqual(id, user.id, "User ID does not match")
-        self.assertEqual(email, user.email, "User email does not match")
-        self.assertEqual(first_name_modified, user.first_name, "Exercise first name does not match")
-        self.assertEqual(last_name_modified, user.last_name, "Exercise last name does not match")
+        # here the use is able to loggin
+        self.assertEqual(True, user.able_to_login(email, password))
 
     # test the activation of an user
     def test_activate_user(self):
         id = 1
         email = "user@email.com"
-        first_name = "FirstName"
-        last_name = "LastName"
-        user = User(id, email, first_name, last_name)
+        password = "password"
+        user = User(email, password)
         self.assertEqual(False, user.active, "User activate does not match")
 
         # we activate the user 
