@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -17,9 +18,11 @@ def exercise_detail(exercise_name):
     exercise_name_clean = exercise_name.replace(" ", "_")
     return render_template('exercise_details.html', exercise_name=exercise_name_clean)
 
+
 @app.route('/workloads')
 def workloads():
     return "Section still under construction :)"
+
 
 @app.route('/')
 def landscape():
@@ -27,4 +30,4 @@ def landscape():
 
 
 if __name__ == "__main__":
-   app.run(debug=True)
+    app.run(debug=True)

@@ -1,5 +1,5 @@
 import unittest
-from excercise import Exercise
+from exercise import Exercise
 from workload import Workload
 from user import User
 
@@ -8,30 +8,30 @@ class Testing(unittest.TestCase):
         self.assertEqual(True, True)
 
     # test the creation of an exercise
-    def test_create_excersise(self):
+    def test_create_exercise(self):
         id = 1
-        name = "Excercise name 1"
+        name = "Exercise name 1"
         description = "Exercise description 1"
         exercise = Exercise(id, name, description)
 
-        self.assertEqual(id, exercise.id, "Excercise ID does not match")
-        self.assertEqual(name, exercise.name, "Excercise name does not match")
-        self.assertEqual(description, exercise.description, "Excercise description does not match")
+        self.assertEqual(id, exercise.id, "Exercise ID does not match")
+        self.assertEqual(name, exercise.name, "Exercise name does not match")
+        self.assertEqual(description, exercise.description, "Exercise description does not match")
 
     # test the update of an exercise
-    def test_update_excersise(self):
+    def test_update_exercise(self):
         id = 1
-        name = "Excercise name 1"
+        name = "Exercise name 1"
         description = "Exercise description 1"
         exercise = Exercise(id, name, description)
 
-        name_modified = "Excercise name 1 modified"
+        name_modified = "Exercise name 1 modified"
         description_modified = "Exercise description 1 modified"
         exercise.update(name_modified, description_modified)
 
-        self.assertEqual(id, exercise.id, "Excercise ID does not match")
-        self.assertEqual(name_modified, exercise.name, "Excercise name does not match")
-        self.assertEqual(description_modified, exercise.description, "Excercise description does not match")
+        self.assertEqual(id, exercise.id, "Exercise ID does not match")
+        self.assertEqual(name_modified, exercise.name, "Exercise name does not match")
+        self.assertEqual(description_modified, exercise.description, "Exercise description does not match")
     
     # test the creation of a workload
     def test_create_workload(self):
@@ -39,13 +39,13 @@ class Testing(unittest.TestCase):
         exercises = []
         workload_description = "Workload description 1"
         workload = Workload(id, exercises, workload_description)
-        self.assertEqual(id, workload.id, "Worload id field does not match")
-        self.assertEqual(exercises, workload.exercises, "Worload exercises list does not match")
+        self.assertEqual(id, workload.id, "Workload id field does not match")
+        self.assertEqual(exercises, workload.exercises, "Workload exercises list does not match")
 
     # test we can add exercises to a workload
     def test_add_exercise_to_workload(self):
         id = 1
-        name = "Excercise name 1"
+        name = "Exercise name 1"
         description = "Exercise description 1"
         first_exercise = Exercise(id, name, description)
         workload_description = "Workload description 1"
@@ -55,7 +55,7 @@ class Testing(unittest.TestCase):
         self.assertEqual(1, len(workload.exercises), "Worload exercises list does not match")
 
         id = 2
-        name = "Excercise name 2"
+        name = "Exercise name 2"
         description = "Exercise description 2"
         second_exercise = Exercise(id, name, description)
         workload.add(second_exercise)
@@ -67,13 +67,13 @@ class Testing(unittest.TestCase):
     def test_remove_exercise_from_workload(self):
         exercises = []
         id = 1
-        name = "Excercise name 1"
+        name = "Exercise name 1"
         description = "Exercise description 1"
         first_exercise = Exercise(id, name, description)
         exercises.append(first_exercise)
         
         id = 2
-        name = "Excercise name 2"
+        name = "Exercise name 2"
         description = "Exercise description 2"
         second_exercise = Exercise(id, name, description)
         exercises.append(second_exercise)
@@ -96,13 +96,13 @@ class Testing(unittest.TestCase):
     def test_find_exercise_in_workload(self):
         exercises = []
         id = 1
-        name = "Excercise name 1"
+        name = "Exercise name 1"
         description = "Exercise description 1"
         first_exercise = Exercise(id, name, description)
         exercises.append(first_exercise)
         
         id = 2
-        name = "Excercise name 2"
+        name = "Exercise name 2"
         description = "Exercise description 2"
         second_exercise = Exercise(id, name, description)
         exercises.append(second_exercise)
@@ -127,8 +127,8 @@ class Testing(unittest.TestCase):
 
         self.assertEqual(id, user.id, "User ID does not match")
         self.assertEqual(email, user.email, "User email does not match")
-        self.assertEqual(first_name, user.first_name, "Excercise first name does not match")
-        self.assertEqual(last_name, user.last_name, "Excercise last name does not match")
+        self.assertEqual(first_name, user.first_name, "Exercise first name does not match")
+        self.assertEqual(last_name, user.last_name, "Exercise last name does not match")
 
     # test the update of an user
     def test_update_user(self):
@@ -141,8 +141,8 @@ class Testing(unittest.TestCase):
         # here we assert the field values are the original ones
         self.assertEqual(id, user.id, "User ID does not match")
         self.assertEqual(email, user.email, "User email does not match")
-        self.assertEqual(first_name, user.first_name, "Excercise first name does not match")
-        self.assertEqual(last_name, user.last_name, "Excercise last name does not match")
+        self.assertEqual(first_name, user.first_name, "Exercise first name does not match")
+        self.assertEqual(last_name, user.last_name, "Exercise last name does not match")
 
         first_name_modified = "FirstNameModified"
         last_name_modified = "LastNameModified"
@@ -152,8 +152,8 @@ class Testing(unittest.TestCase):
         # and nothing else since the update method only accepts those fields to change
         self.assertEqual(id, user.id, "User ID does not match")
         self.assertEqual(email, user.email, "User email does not match")
-        self.assertEqual(first_name_modified, user.first_name, "Excercise first name does not match")
-        self.assertEqual(last_name_modified, user.last_name, "Excercise last name does not match")
+        self.assertEqual(first_name_modified, user.first_name, "Exercise first name does not match")
+        self.assertEqual(last_name_modified, user.last_name, "Exercise last name does not match")
 
     # test the activation of an user
     def test_activate_user(self):
