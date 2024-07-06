@@ -1,12 +1,14 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session
-
+from user import User
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 app.secret_key = 'your_secret_key'  # Needed for session management and flash messages
 # Dummy user data
-users = {'user1': 'password1', 'user2': 'password2'}
+user1 = User('user1', 'password1')
+user2 = User('user2', 'password2')
+users = [user1, user2]
 exercises = ["Bicep Curl", "Jacknife Situps", "Swimming", "Jogging", "Hiking", "Table Tennis"]
 
 
@@ -17,14 +19,17 @@ def login_redirect():
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    user1 = User('user1', password='password1')
+    user2 = User('user2', password='password2')
+    users = {user1, user2}
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        if username in users and users[username] == password:
-            session['username'] = username
-            flash('Login successful!', 'success')
-            return redirect(url_for('index', username=username))
-        else:
+        for user in users:
+            if user.able_to_login(username, password) == True:
+                session['username'] = username
+                flash('Login successful!', 'success')
+                return redirect(url_for('index', username = username, id = user.get_id()))
             flash('Invalid credentials', 'danger')
     return render_template('login.html')
 
@@ -51,14 +56,13 @@ def exercise_detail(exercise_name):
     exercise_name_clean = exercise_name.replace(" ", "_")
     return render_template('exercise_details.html', exercise_name=exercise_name_clean)
 
+@app.route('/index/<username>/<id>')
+def index(username, id):
+    return render_template('index.html', username = username, user = users[int(id)])
 
-@app.route('/index/<username>')
-def index(username):
-    return render_template('index.html', username=username)
 
-
-@app.route('/workouts')
-def workouts():
+@app.route('/workloads')
+def workloads():
     return "Section still under construction :)"
 
 
