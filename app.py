@@ -23,7 +23,7 @@ def login():
         if username in users and users[username] == password:
             session['username'] = username
             flash('Login successful!', 'success')
-            return render_template('index.html')
+            return redirect(url_for('index'))
         else:
             flash('Invalid credentials', 'danger')
     return render_template('login.html')
@@ -33,6 +33,7 @@ def login():
 def exercises():
     #exercises = db.exercise.query.all()
     if 'username' in session:
+        exercises = ["Bicep Curl", "Jacknife Situps", "Swimming", "Jogging", "Hiking", "Table Tennis"]
         return render_template("exercises.html", exercises=exercises)
     return redirect(url_for('login'))
 
@@ -49,6 +50,10 @@ def exercise_detail(exercise_name):
     # Replace spaces with underscores in site_name
     exercise_name_clean = exercise_name.replace(" ", "_")
     return render_template('exercise_details.html', exercise_name=exercise_name_clean)
+
+@app.route('/index')
+def index():
+    return render_template('index.html')
 
 
 @app.route('/workloads')
