@@ -10,6 +10,8 @@
 https://octopus-app-h8uaj.ondigitalocean.app/
 ## Slack Channel
 https://agilesoftwarecourse.slack.com/archives/C07AEDC601G
+## Jira Board
+https://flex-fit.atlassian.net/jira/software/projects/FFA/boards/2
 ## Project Vision
 Create an easy to use app that provides workout plans for users.
 ## Far Vision
@@ -89,3 +91,45 @@ Also we are using pre and post class time to have meetings and do mob programmin
 | Ziyuan | Following what we have planed goes very well, we finish almost all as the backlog; Very strong cooperation, everyone contributes to different parts, even if something is hard for someone | ⁠The research or preparation of the project did not be done so wel | ⁠More detail as the feedback said |
 | Marco | I agree with Ziyan's comment on cooperation. I think having a Whatsapp for quick communication and slack for code sharing was helpful. | I could have probably setup a schedule from the first day so we wouldn't scramble for last minute plans. | I think we should hold sprint planning earlier and establish tasks for everyone faster. |
 | Xingjian | we have created the basic page and the database for the website and we have managed to use all these tools very well | we spent too much time planning and we didn’t make a good UI  | learn more relevant skills and design a good UI |
+
+
+# Second Sprint
+## Forcast for this sprint
+10 story points
+## Rationale
+Last sprint we completed 7, now we have many tools and practice settled, like the use of jira for user stories, tasks and communication, we are used to regular scrum meetings.
+This means we will focus more in coding; also it is weekend and we will have the time that we regularly use to attend the course.
+## Sprint Backlog - Sprint Planning
+We have re-configured the priority of our stories to give priority to imporve the UI that was the feedback that we have received from our stakeholder.
+On the other hand, since we received a bad grade about the test that we needed to do for the second assignment, we have put a story to fix the old test and create the new ones that are required for next assignment. This is not an ask of any of our stakholders but is a task that we need to do and takes resources from our team, so we have put the professor as stakholder for this matter: https://flex-fit.atlassian.net/browse/FFA-18.
+
+## Standup Meeting - Saturday 6 (second day of sprint)
+| Name          | What have you done so far | What you plan to do today | Any Blockers |
+| ------------- | ------------- | ------------- | ------------- |
+| Sergio |  |  |  |
+| Ziyuan |  |  |
+| Xingjian |  |  |
+| Marco |  |  |  |
+ What are the impediments? What is your impediment removal plan?
+ what did you do in the last 24 hours that helped you meet the Sprint Goal? In your README, document which team members did which activities
+
+## Evidence of mob - pair programming
+PASTE PHOTO HERE 
+ 
+## Sprint review - Feedback from Stakeholder
+![feedback](feedback.png)
+### Translated:
+"It is recommended to enrich the content, increase the graphical interface, and improve user friendliness."
+
+## Continues Integration
+Here you can see that we have our Continuous Integration system where all push only to master, and Continues Delivery that builds our application automagically whenever the build is "green" (when test passes) and if the test do not pass (red) it does not push that broken build to prod: https://octopus-app-h8uaj.ondigitalocean.app/
+![ci_cd](ci_cd.png)
+
+
+## Sprint Retrospective:
+| Name          | What went well | What went wrong | Action Items |
+| ------------- | ------------- | ------------- | ------------- |
+| Sergio |  |  |  |
+| Ziyuan |  |  |  |
+| Marco |  |  |  |
+| Xingjian |  |   |  |
