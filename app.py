@@ -1,22 +1,8 @@
-from flask import Flask, render_template, request
-from flask_sqlalchemy import SQLAlchemy
-import sqlite3
+from flask import Flask, render_template
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = SQLAlchemy(app)
-
-
-class Exercise(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    exercise = db.Column(db.String(120), unique=True, nullable=False)
-
-    def __repr__(self):
-        return f' {self.exercise}'
-
-with app.app_context():
-    db.create_all()
 
 @app.route('/exercises')
 def exercises():
