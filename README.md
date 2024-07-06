@@ -106,18 +106,19 @@ On the other hand, since we received a bad grade about the test that we needed t
 ## Standup Meeting - Saturday 6 (second day of sprint)
 | Name          | What have you done so far | What you plan to do today | Any Blockers |
 | ------------- | ------------- | ------------- | ------------- |
-| Sergio |  |  |  |
+| Sergio | I worked on fixing unit test, and CI/CD jobs on digital ocean, I created a new test file, with a sample of tests for exercises, workloads and users |  I plan to continue adding basic unit tests to meet the 20 ones we need for next assignment on Monday | I had to put the file in the root of the project because it seems that my environment has some issues importing the modules when they are not in the same folder |
 | Ziyuan |  |  |
 | Xingjian |  |  |
 | Marco |  |  |  |
 
 ### What are the impediments? What is your impediment removal plan?
-bla bla
+Put the test file in the root of the folder, as well as the classes for exercises, workloads and users. We can move them later when we figure what's the issue and for now focus on MVP
+
 ### what did you do in the last 24 hours that helped you meet the Sprint Goal?
-bla bla
+We have improved the UI with CSS and fade effects
 
 ## Evidence of mob - pair programming
-PASTE PHOTO HERE 
+![sprint2 pair programming](sprint2_pair_programming.png)
  
 ## Sprint review - Feedback from Stakeholder
 ![feedback](feedback.png)
