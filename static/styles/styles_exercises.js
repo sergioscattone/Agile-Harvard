@@ -45,22 +45,32 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         .exercise-list a {
-            background-color: #04AA6D;
+            display: inline-block;
+            background-color: #04AA6D; /* Default Green */
             border: none;
             color: white;
-            padding: 10px 20px;
+            padding: 15px;
             text-align: center;
             text-decoration: none;
-            display: inline-block;
             font-size: 18px;
             border-radius: 10px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%; /* Ensure all buttons are the same length */
+            box-sizing: border-box;
+        }
+
+        .exercise-list a:nth-child(odd) {
+            background-color: #1E90FF; /* Blue */
+        }
+
+        .exercise-list a:nth-child(even) {
+            background-color: #FF6347; /* Red */
         }
 
         .exercise-list a:hover {
-            background-color: #039f5b;
             transform: translateY(-2px);
+            opacity: 0.9;
         }
 
         @keyframes fadeIn {
