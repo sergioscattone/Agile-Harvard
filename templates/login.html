@@ -8,6 +8,9 @@
   <body>
     <div class="login-container">
       <h2>Login</h2>
+      <ul class="messages">
+        <li class="success">for guest use: <br />username=user1 <br />passowrd=password1</li>
+      </ul>
       <form method="POST" action="{{ url_for('login') }}">
         <label for="username">Username:</label>
         <input type="text" id="username" name="username" required>
