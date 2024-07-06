@@ -1,18 +1,21 @@
 
-<!-- templates/exercises.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>List of exercises</title>
+    <meta charset="utf-8">
+    <title>List of Exercises</title>
+    <script src="{{ url_for('static', filename='styles/styles_exercises.js') }}" defer></script>
 </head>
 <body>
-    <h1>Exercise List</h1>
-    {% block body %}
-           <ul>
-               {% for exercise in exercises %}
-                   <li><a href="{{ url_for('exercise_detail', exercise_name=exercise.replace(' ', '_')) }}">{{ exercise }}</a></li>
-               {% endfor %}
-           </ul>
-    {% endblock %}
+    <div class="container">
+        <h1>Exercise List</h1>
+        <div class="exercise-list">
+            <ul>
+                {% for exercise in exercises %}
+                    <li><a href="{{ url_for('exercise_detail', exercise_name=exercise.replace(' ', '_')) }}">{{ exercise }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
 </body>
 </html>

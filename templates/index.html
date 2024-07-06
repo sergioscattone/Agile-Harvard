@@ -1,20 +1,24 @@
-<!-- templates/index.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">
+    <meta charset="utf-8">
     <title>Flex Fit</title>
+    <script src="{{ url_for('static', filename='styles/styles_index.js') }}" defer></script>
 </head>
 <body>
-    <h1>Welcome to Flex Fit, {{ username }}!</h1>
-    <a href="/exercises" class="button">Exercises</a>
-    <a href="/workouts" class="button">Example Workouts</a>
-    <!-- For commented until we work on login
+    <div class="container">
+        <h1>Welcome to Flex Fit, {{ username }}!</h1>
+        <div class="button-container">
+            <a href="/exercises" class="button">Exercises</a>
+            <a href="/workouts" class="button">Example Workouts</a>
+        </div>
+        <!-- Commented until we work on login
         <form action="/exercise" method="post">
             <label for="name">Enter your name:</label><br>
             <input type="text" id="name" name="name"><br>
             <input type="submit" value="Submit">
-        </form
-    -->
+        </form>
+        -->
+    </div>
 </body>
 </html>
