@@ -96,7 +96,7 @@ Also we are using pre and post class time to have meetings and do mob programmin
 ## Forcast for this sprint
 10 story points
 ## Rationale
-Last sprint we completed 7, now we have many tools and practice settled, like the use of jira for user stories, tasks and communication, we are used to regular scrum meetings.
+Last sprint we completed 5, now we have many tools and practice settled, like the use of jira for user stories, tasks and communication, we are used to regular scrum meetings.
 This means we will focus more in coding; also it is weekend and we will have the time that we regularly use to attend the course.
 
 ## Sprint Backlog - Sprint Planning
