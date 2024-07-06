@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash, session,get_flashed_messages
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'
@@ -26,7 +26,6 @@ def login():
             return redirect(url_for('index', username=username))
         else:
             flash('Invalid credentials', 'danger')
-    get_flashed_messages()
     return render_template('login.html')
 
 
