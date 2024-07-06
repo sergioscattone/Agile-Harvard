@@ -52,7 +52,7 @@ class Testing(unittest.TestCase):
         workout = Workout(id, [ first_exercise ], workout_description)
 
         # here exercises should be one
-        self.assertEqual(1, len(workout.exercises), "Worload exercises list does not match")
+        self.assertEqual(1, len(workout.exercises), "Workload exercises list does not match")
 
         id = 2
         name = "Exercise name 2"
@@ -82,7 +82,7 @@ class Testing(unittest.TestCase):
         workout_description = "Workout description 1"
         workout = Workout(id, exercises, workout_description)
         # here exercises should be two
-        self.assertEqual(2, len(workout.exercises), "Worload exercises list does not match")
+        self.assertEqual(2, len(workout.exercises), "Workout exercises list does not match")
         
         workout.remove(first_exercise)
         # here exercises should be one
