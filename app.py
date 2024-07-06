@@ -23,7 +23,7 @@ def login():
         if username in users and users[username] == password:
             session['username'] = username
             flash('Login successful!', 'success')
-            return redirect(url_for('index', username = username))
+            return redirect(url_for('index', username=username))
         else:
             flash('Invalid credentials', 'danger')
     return render_template('login.html')
@@ -51,13 +51,14 @@ def exercise_detail(exercise_name):
     exercise_name_clean = exercise_name.replace(" ", "_")
     return render_template('exercise_details.html', exercise_name=exercise_name_clean)
 
+
 @app.route('/index/<username>')
 def index(username):
-    return render_template('index.html', username = username)
+    return render_template('index.html', username=username)
 
 
-@app.route('/workloads')
-def workloads():
+@app.route('/workouts')
+def workouts():
     return "Section still under construction :)"
 
 

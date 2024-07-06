@@ -1,4 +1,4 @@
-class User():
+class User:
     def __init__(self, id: int, email: str, first_name: str, last_name: str):
         self.id = id
         self.email = email
@@ -16,4 +16,4 @@ class User():
         return self
 
     def __repr__(self):
-        return f' {self.exercise}'
+        return f' {self.first_name}'

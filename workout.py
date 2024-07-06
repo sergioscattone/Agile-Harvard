@@ -2,7 +2,7 @@ from typing import List
 from exercise import Exercise
 
 
-class Workload:
+class Workout:
     def __init__(self, id: int, exercises: List[Exercise], description: str):
         self.id = id
         self.exercises = exercises
