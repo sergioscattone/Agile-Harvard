@@ -69,7 +69,9 @@ class User():
 
     def add_exercise(self, exercise):
         self.workout[self.num_workouts - 1].add(exercise)
-
+    def add_workout(self, workout):
+        self.num_workouts += 1
+        self.workout.append(workout)
     def get_num_workouts(self) -> int:
         return self.num_workouts
 
