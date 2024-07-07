@@ -11,3 +11,5 @@ class Exercise():
 
     def __repr__(self):
         return f' {self.exercise}'
+
+Bicep_Curl = Exercise(1, 'Bicep Curl', 'Balabala')

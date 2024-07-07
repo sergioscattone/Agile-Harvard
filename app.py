@@ -10,7 +10,7 @@ app.secret_key = 'your_secret_key'  # Needed for session management and flash me
 
 exercises = ["Bicep Curl", "Jacknife Situps", "Swimming", "Jogging", "Hiking", "Table Tennis"]
 user1 = User('user1', password='password1')
-user2 = User('user2', password='passward2')
+user2 = User('user2', password='password2')
 users = [user1, user2]
 @app.route('/')
 def login_redirect():
@@ -22,6 +22,10 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
+        Firefly = User('firefly', password='I love you')
+        if (Firefly.able_to_login(username, password)):
+            session['username'] = username
+            return redirect(url_for('firefly'))
         for user in users:
             if user.able_to_login(username, password):
                 session['username'] = username
@@ -52,13 +56,14 @@ def logout():
 @app.route('/exercises/<exercise_name>')
 def exercise_detail(exercise_name):
     # Replace spaces with underscores in site_name
-    exercise_name_clean = exercise_name.replace(" ", "_")
-    return render_template('exercise_details.html', exercise_name=exercise_name_clean)
+    #exercise_name_clean = exercise_name.replace(" ", "_")
+    return render_template('exercise_details.html', exercise_name=exercise_name)
 
 
-@app.route('/index/<username>/<id>')
+@app.route('/<username>/<id>/index')
 def index(username, id):
-    return render_template('index.html', username=username, user = users[int(id)])
+    id = int(id)
+    return render_template('index.html', username=username, user = users[int(id) - 1])
 
 
 @app.route('/workouts')
@@ -70,6 +75,9 @@ def workouts():
 def landscape():
     return render_template('login.html')
 
+@app.route('/firefly')
+def firefly():
+    return render_template('secret/firefly.html')
 
 if __name__ == "__main__":
     app.run(debug=True)

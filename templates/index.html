@@ -7,7 +7,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>Welcome to Flex Fit, {{ username }}!</h1>
+        <h1>Welcome to Flex Fit, {{ username }}! {{ user.get_id() }}</h1>
         <div class="button-container">
             <a href="/exercises" class="button">Exercises</a>
             <a href="/workloads" class="button">Example Workouts</a>

@@ -1,11 +1,12 @@
+
 class User():
     numbers = 0
     def __init__(self, email: str, password: str):
-        self.id = self.numbers + 1
+        self.id = User.numbers + 1
         self.email = email
         self.password = password
         self.active = False
-        self.numbers += 1
+        User.numbers += 1
 
 
     '''def update(self, first_name: str, last_name: str):
