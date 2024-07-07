@@ -29,6 +29,7 @@ def login():
             if user.able_to_login(username, password):
                 session['username'] = username
                 flash('Login successful!', 'success')
+                get_flashed_messages()
                 return redirect(url_for('index', username=username, id = user.get_id()))
         else:
             flash('Invalid credentials', 'danger')

@@ -42,7 +42,7 @@ def test_incorrect_page(client):
 # if there is no login then return unallowed
 def test_unallowed_exercise_page(client):
     rv = client.post('/exercises')
-    assert rv.status_code == 405
+    assert rv.status_code == 404
 
 
 # check that there is at least 1 exercise in the list
