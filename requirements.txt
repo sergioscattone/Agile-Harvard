@@ -2,4 +2,3 @@ flask
 gunicorn
 pytest
 flask_sqlalchemy
-pre-commits
