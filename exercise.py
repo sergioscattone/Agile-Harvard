@@ -8,11 +8,14 @@ class Exercise():
         self.name = name
         self.description = description
         return self
+    
     def get_name(self):
         return self.name
+
     def show(self):
         print(self.name)
         print(self.description)
+
     def __repr__(self):
         return f' {self.exercise}'
 
