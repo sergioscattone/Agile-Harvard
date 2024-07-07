@@ -1,12 +1,94 @@
 <!-- templates/exercise_details.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="utf-8">
     <title>{{ exercise_name }} Detail Page</title>
 </head>
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        }
+    .button-container {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        margin-top: 20px;
+        }
+    .spring {
+        flex-grow: 1;
+        }
+    .button {
+        padding: 10px 30px;
+        color: #000000;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        background: linear-gradient(135deg, #ecdddd 30%, #008731 100%);
+    }
+    .button-wrapper{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        position: relative
+        }
+    .center-button{
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%)
+
+        }
+    .button:hover {
+        transform: translateY(-2px);
+        opacity: 0.9;
+        }
+
+    .container {
+        background-color: #fff;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        max-width: 600px;
+
+        }
+    .small-container {
+        text-align: center;
+        background-color: #d6d6d6;
+        padding: 15px;
+        border-radius: 10px;
+        margin-top: 10px;
+        }
+    </style>
 <body>
-    <h1>{{ exercise_name|replace("_", " ") }} Detail Page</h1>
-    <p>This is the detail page for {{ exercise_name|replace("_", " ") }}.</p>
-    <a href="/">Back to Home</a>
+
+ <div class="container">
+<h1>{{ exercise_name|replace("_", " ") }} Detail Page</h1>
+         <div class="small-container">
+             <p>
+                 Hello, this is Flex Fit
+             </p>
+            </div>
+     <div class="button-container">
+         <button class="button">Register</button>
+         <div class="spring"></div>
+         <button onclick="goBack()" class="button">Go back</button>
+     </div>
+ </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>

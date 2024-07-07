@@ -41,7 +41,8 @@
 
         }
         .button:hover {
-            background-color: #039e5a;
+            background-color: #039f5b;
+            transform: translateY(-2px);
         }
     </style>
 <body>
@@ -55,7 +56,7 @@
             </ul>
         </div>
     <div class = 'button-container'>
-        <a href="{{ url_for('workouts', username = user.get_username(), id = user.get_id() )}}" class="button center-button">My Workouts</a>
+        <a href="{{ url_for('workouts', username = user.get_username(), id = user.get_id() )}}" class="button">My Workouts</a>
             <div class="spring"></div>
             <button onclick="goBack()" class="button">Go back</button>
         </div>

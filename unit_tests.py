@@ -271,7 +271,7 @@ class Testing(unittest.TestCase):
         self.assertEqual(2, len(user.workout))
 
         # find a particular workload
-        first_workout_find = user.find_workout(1)
+        first_workout_find = user.find_workout_by_id(1)
         self.assertEqual(first_workout_id, first_workout_find.id, "Find workout in user class does not work")
         self.assertEqual(first_exercise, first_workout_find.find(first_exercise_id), "Find workout in user class does not work")
         self.assertEqual(first_workout_description, first_workout_find.description, "Find workout in user class does not work")
@@ -314,7 +314,7 @@ class Testing(unittest.TestCase):
         self.assertEqual(2, len(user.workout))
 
         # remove a particular workload
-        user.remove_workout(1)
+        user.remove_workout_by_id(1)
         self.assertEqual(1, len(user.workout))
 
         User.numbers = 0
