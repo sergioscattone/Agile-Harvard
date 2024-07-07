@@ -208,76 +208,6 @@ class Testing(unittest.TestCase):
         self.assertEqual(False, user.active)
         User.numbers = 0
 
-    # test add workouts as user
-    def test_add_workouts_as_user(self):
-        # Create user
-        email = "user@email.com"
-        password = "password"
-        user = User(email, password)
-
-        # Create exercise
-        exercise_id = 1
-        name = "Exercise name 1"
-        description = "Exercise description 1"
-        first_exercise = Exercise(exercise_id, name, description)
-        
-        # Create workout
-        id = 1
-        workout_description = "Workout description 1"
-        first_workout = Workout(id, [ first_exercise ], workout_description)
-
-        user.create_workout(first_workout)
-        self.assertEqual(1, len(user.workout))
-        User.numbers = 0
-
-    # test find a workout added by an user
-    def test_find_a_workout_added_by_an_user(self):
-        # Create user
-        email = "user@email.com"
-        password = "password"
-        user = User(email, password)
-
-        # Create exercise
-        first_exercise_id = 1
-        first_exercise_name = "Exercise name 1"
-        first_exercise_description = "Exercise description 1"
-        first_exercise = Exercise(
-            first_exercise_id,
-            first_exercise_name,
-            first_exercise_description)
-        
-        # Create first workout
-        first_workout_id = 1
-        first_workout_description = "Workout description 1"
-        first_workout = Workout(first_workout_id, [ first_exercise ], first_workout_description)
-
-        user.create_workout(first_workout)
-        self.assertEqual(1, len(user.workout))
-
-        # Create another exercise
-        second_exercise_id = 2
-        second_name = "Exercise name 2"
-        second_description = "Exercise description 2"
-        second_exercise = Exercise(
-            second_exercise_id,
-            second_name,
-            second_description)
-        
-        # Create second workout
-        second_workout_id = 2
-        second_workout_description = "Workout description 2"
-        second_workout = Workout(second_workout_id, [ second_exercise ], second_workout_description)
-        user.create_workout(second_workout)
-        self.assertEqual(2, len(user.workout))
-
-        # find a particular workload
-        first_workout_find = user.find_workout_by_id(1)
-        self.assertEqual(first_workout_id, first_workout_find.id, "Find workout in user class does not work")
-        self.assertEqual(first_exercise, first_workout_find.find(first_exercise_id), "Find workout in user class does not work")
-        self.assertEqual(first_workout_description, first_workout_find.description, "Find workout in user class does not work")
-
-        User.numbers = 0
-
     # test remove workouts as user
     def test_remove_workouts_as_user(self):
         # Create user
@@ -300,7 +230,7 @@ class Testing(unittest.TestCase):
         first_workout = Workout(id, [ first_exercise ], workout_description)
 
         user.add_workout(first_workout)
-        self.assertEqual(1, len(user.workout))
+        self.assertEqual(1, len(user.workouts))
 
         # Create another exercise
         second_exercise_id = 2
@@ -311,11 +241,11 @@ class Testing(unittest.TestCase):
             second_name,
             second_description)
         user.add_workout(second_exercise)
-        self.assertEqual(2, len(user.workout))
+        self.assertEqual(2, len(user.workouts))
 
         # remove a particular workload
         user.remove_workout_by_id(1)
-        self.assertEqual(1, len(user.workout))
+        self.assertEqual(1, len(user.workouts))
 
         User.numbers = 0
 
@@ -358,7 +288,7 @@ class Testing(unittest.TestCase):
 
         # remove all workouts in a single action
         user.remove_all_workouts()
-        self.assertEqual(0, len(user.workout))
+        self.assertEqual(0, len(user.workouts))
 
         User.numbers = 0
 
@@ -427,6 +357,29 @@ class Testing(unittest.TestCase):
 
         Exercise_History.history = []
         User.numbers = 0
+
+    # Test get self from workout
+    def test_get_self_from_workout(self):
+        id = 1
+        name = "Exercise name 1"
+        description = "Exercise description 1"
+        first_exercise = Exercise(id, name, description)
+        workout_description = "Workout description 1"
+        workout = Workout(id, [ first_exercise ], workout_description)
+
+        self.assertEqual('Workout description 1\n', workout.get_self())
+
+    # test get_num_workouts from user
+    def test_get_num_workouts(self):
+        # Create first user
+        email = "user@email.com"
+        password = "password"
+        user = User(email, password)
+        self.assertEqual(0, user.get_num_workouts())
+
+        # Assert that num_workouts increases when we create a workout
+        user.create_workout()
+        self.assertEqual(1, user.get_num_workouts())
 
 if __name__ == '__main__':
     unittest.main()

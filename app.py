@@ -11,9 +11,11 @@ app.secret_key = 'your_secret_key'  # Needed for session management and flash me
 user1 = User('user1', password='123456')
 user2 = User('user2', password='123456')
 users = [user1, user2]
+
 users[0].create_workout()
 users[0].add_exercise(exercise.Jacknife_Situps)
 users[0].add_exercise(exercise.Hiking)
+
 @app.route('/')
 def login_redirect():
     return redirect(url_for('login'))

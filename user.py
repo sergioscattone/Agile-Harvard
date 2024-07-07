@@ -1,5 +1,7 @@
 from workout import Workout
 from typing import List
+
+
 class User():
     numbers = 0
     max_attempts: int = 5
@@ -8,7 +10,7 @@ class User():
         self.email = email
         self.password = password
         self.active = False
-        self.workout : List[Workout] = []
+        self.workouts : List[Workout] = []
         self.attempts = 0
         self.num_workouts = 0
         User.numbers += 1
@@ -24,14 +26,14 @@ class User():
 
     def deactivate(self):
         self.active = False
+
     def get_id(self) -> int:
         return self.id
-
-        return self
 
     '''def __repr__(self):
         return f' {self.exercise}'
     '''
+
     def able_to_login(self, email, password) -> bool:
         if self.attempts >= User.max_attempts:
             self.deactivate()
@@ -43,13 +45,15 @@ class User():
         else:
             self.attempts += 1
         return False
+
     def get_username(self):
         return self.email
 
     def get_workout(self) -> List[Workout]:
-        return self.workout
+        return self.workouts
+
     def create_workout(self, name = None, discription = ""):
-        self.workout.append(Workout(len(self.workout) + 1, [], name, discription))
+        self.workouts.append(Workout(len(self.workouts) + 1, [], name, discription))
         self.num_workouts += 1
 
     def delete_workout(self, workout):
@@ -57,25 +61,26 @@ class User():
         self.num_workouts -= 1
 
     def remove_workout_by_id(self, id):
-        for workout in self.workout:
+        for workout in self.workouts:
             if workout.id == id:
-                self.workout.remove(workout)
+                self.workouts.remove(workout)
                 self.num_workouts -= 1
 
     def find_workout_by_id(self, id):
-        for workout in self.workout:
+        for workout in self.workouts:
             if workout.id == id:
                 return workout
 
     def add_exercise(self, exercise):
-        self.workout[self.num_workouts - 1].add(exercise)
+        self.workouts[self.num_workouts - 1].add(exercise)
+
     def add_workout(self, workout):
         self.num_workouts += 1
-        self.workout.append(workout)
+        self.workouts.append(workout)
+
     def get_num_workouts(self) -> int:
         return self.num_workouts
 
     def remove_all_workouts(self):
-        for workout in self.workout:
-            workout.remove()
+        self.workouts = []
         self.num_workouts = 0

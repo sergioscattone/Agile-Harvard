@@ -27,11 +27,13 @@ class Workout:
         for exercise in self.exercises:
             if exercise.id == exercise_id:
                 return exercise
+
     def get_self(self, name_needed = False):
         result = self.name + '\n'
         if name_needed:
             for exercise in self.exercises:
                 result += str(exercise.get_name()) + "\n\t"
         return result
+
 """    def __repr__(self):
         return f' {self.exercises}'"""
