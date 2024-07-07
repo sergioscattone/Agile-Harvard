@@ -5,13 +5,53 @@
     <title>Flex Fit</title>
     <script src="{{ url_for('static', filename='styles/styles_index.js') }}" defer></script>
 </head>
+<style>
+        .button-container {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 20px;
+            color: #000000;
+        }
+        .spring {
+            flex-grow: 1;
+            color: #000000;
+        }
+        .button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background: linear-gradient(135deg, #ecdddd 30%, #008731 100%);
+            color: #000000;
+        }
+        .button-wrapper{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            position: relative
+        }
+        .center-button{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+        .button:hover {
+            background-color: #039e5a;
+        }
+    </style>
 <body>
     <div class="container">
         <h1>Welcome to Flex Fit, {{ username }}! {{ user.get_id() }}</h1>
         <div class="button-container">
             <a href="{{ url_for('exercises', username = user.get_username(), id = user.get_id() )}}" class="button">Exercises</a>
             <a href="{{ url_for('workouts', username = user.get_username(), id = user.get_id() )}}" class="button">My Workouts</a>
-            <button onclick = "goBack()">Log out</button>
+            <div class="spring">
+            <button onclick = "goBack()" class="button">Log out</button>
+            </div>
         </div>
         <!-- Commented until we work on login
         <form action="/exercise" method="post">

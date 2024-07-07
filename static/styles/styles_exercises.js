@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function () {
             margin-bottom: 30px;
             color: #333;
             font-weight: 700;
-            font-size: 24px;
+            font-size: 26px;
         }
 
         .exercise-list {
@@ -48,11 +48,12 @@ document.addEventListener('DOMContentLoaded', function () {
             display: inline-block;
             background-color: #04AA6D; /* Default Green */
             border: none;
-            color: white;
+            color: #000000;
             padding: 15px;
             text-align: center;
             text-decoration: none;
             font-size: 18px;
+            font-weight: bold;
             border-radius: 10px;
             transition: background-color 0.3s ease, transform 0.3s ease;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -61,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         .exercise-list a:nth-child(odd) {
-            background-color: #1E90FF; /* Blue */
+            background: linear-gradient(135deg, #ecdddd 30%, #008731 100%);
         }
 
         .exercise-list a:nth-child(even) {

@@ -28,7 +28,9 @@ document.addEventListener('DOMContentLoaded', function () {
             margin-bottom: 30px;
             color: #333;
             font-weight: 700;
-            font-size: 24px;
+            font-size: 28px;
+            font-style: italic;
+            font-weight: bold;
         }
 
         .button-container {
@@ -40,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
         .button {
             background-color: #04AA6D;
             border: none;
-            color: white;
+            color: #000000;
             padding: 15px;
             text-align: center;
             text-decoration: none;
@@ -79,13 +81,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         input[type="submit"] {
             padding: 10px;
-            background-color: #007bff;
-            color: white;
+            color: #000000;
             border: none;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s ease;
+            background: linear-gradient(135deg, #ecdddd 30%, #008731 100%);
         }
 
         input[type="submit"]:hover {
@@ -115,6 +117,10 @@ document.addEventListener('DOMContentLoaded', function () {
             background-color: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
+        }
+        
+        .spring {
+            flex-grow: 1;
         }
 
         @keyframes fadeIn {

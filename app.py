@@ -8,8 +8,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'your_secret_key'  # Needed for session management and flash messages
 # Dummy user data
 
-user1 = User('user1', password='password1')
-user2 = User('user2', password='password2')
+user1 = User('user1', password='123456')
+user2 = User('user2', password='123456')
 users = [user1, user2]
 @app.route('/')
 def login_redirect():
