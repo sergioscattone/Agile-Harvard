@@ -107,7 +107,7 @@ On the other hand, since we received a bad grade about the test that we needed t
 | Name          | What have you done so far | What you plan to do today | Any Blockers |
 | ------------- | ------------- | ------------- | ------------- |
 | Sergio | I worked on fixing unit test, and CI/CD jobs on digital ocean, I created a new test file, with a sample of tests for exercises, workloads and users |  I plan to continue adding basic unit tests to meet the 20 ones we need for next assignment on Monday | I had to put the file in the root of the project because it seems that my environment has some issues importing the modules when they are not in the same folder |
-| Ziyuan |  |  |
+| Ziyuan | I have do bunch of reseaches on the imrpoving user interface, and try to know more and more deeply about the mmechanism of how python and css works together| Improving the interface of 'Login'and 'Exercise' pages|Some blockers about the unfamiliarity
 | Xingjian |  |  |
 | Marco | I helped on fixing and adding some unit tests in pair programming | I am going to add the workout examples page | no blockers |
 
