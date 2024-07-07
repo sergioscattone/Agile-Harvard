@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session, get_flashed_messages
+from user import User
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'
@@ -6,10 +7,11 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
 app.secret_key = 'your_secret_key'  # Needed for session management and flash messages
 # Dummy user data
-users = {'user1': 'password1', 'user2': 'password2'}
+
 exercises = ["Bicep Curl", "Jacknife Situps", "Swimming", "Jogging", "Hiking", "Table Tennis"]
-
-
+user1 = User('user1', password='password1')
+user2 = User('user2', password='passward2')
+users = [user1, user2]
 @app.route('/')
 def login_redirect():
     return redirect(url_for('login'))
@@ -20,10 +22,11 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        if username in users and users[username] == password:
-            session['username'] = username
-            flash('Login successful!', 'success')
-            return redirect(url_for('index', username=username))
+        for user in users:
+            if user.able_to_login(username, password):
+                session['username'] = username
+                flash('Login successful!', 'success')
+                return redirect(url_for('index', username=username, id = user.get_id()))
         else:
             flash('Invalid credentials', 'danger')
     get_flashed_messages()
@@ -53,9 +56,9 @@ def exercise_detail(exercise_name):
     return render_template('exercise_details.html', exercise_name=exercise_name_clean)
 
 
-@app.route('/index/<username>')
-def index(username):
-    return render_template('index.html', username=username)
+@app.route('/index/<username>/<id>')
+def index(username, id):
+    return render_template('index.html', username=username, user = users[int(id)])
 
 
 @app.route('/workouts')
