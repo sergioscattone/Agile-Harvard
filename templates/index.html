@@ -9,16 +9,23 @@
     <div class="container">
         <h1>Welcome to Flex Fit, {{ username }}! {{ user.get_id() }}</h1>
         <div class="button-container">
-            <a href="/exercises" class="button">Exercises</a>
-            <a href="/workloads" class="button">Example Workouts</a>
+            <a href="{{ url_for('exercises', username = user.get_username(), id = user.get_id() )}}" class="button">Exercises</a>
+            <a href="{{ url_for('workouts', username = user.get_username(), id = user.get_id() )}}" class="button">My Workouts</a>
+            <button onclick = "goBack()">Log out</button>
         </div>
         <!-- Commented until we work on login
         <form action="/exercise" method="post">
             <label for="name">Enter your name:</label><br>
-            <input type="text" id="name" name="name"><br>
+            <input type="text" id="name" name="name"><ur>
             <input type="submit" value="Submit">
         </form>
         -->
     </div>
+    <script>
+        function goBack()
+        {
+            window.history.back()
+        }
+    </script>
 </body>
 </html>

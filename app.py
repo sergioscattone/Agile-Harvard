@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session, get_flashed_messages
 from user import User
-
+import exercise
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -8,7 +8,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = 'your_secret_key'  # Needed for session management and flash messages
 # Dummy user data
 
-exercises = ["Bicep Curl", "Jacknife Situps", "Swimming", "Jogging", "Hiking", "Table Tennis"]
 user1 = User('user1', password='password1')
 user2 = User('user2', password='password2')
 users = [user1, user2]
@@ -37,12 +36,12 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/exercises')
-def exercises():
+@app.route('/<username>/<id>/exercises')
+def exercises(username, id):
     #exercises = db.exercise.query.all()
+    exercises = exercise.exercises
     if 'username' in session:
-        exercises = ["Bicep Curl", "Jacknife Situps", "Swimming", "Jogging", "Hiking", "Table Tennis"]
-        return render_template("exercises.html", exercises=exercises)
+        return render_template("exercises.html", exercises=exercises, user = users[int(id) - 1])
     return redirect(url_for('login'))
 
 
@@ -66,9 +65,10 @@ def index(username, id):
     return render_template('index.html', username=username, user = users[int(id) - 1])
 
 
-@app.route('/workouts')
-def workouts():
-    return "Section still under construction :)"
+@app.route('/<username>/<id>/workouts')
+def workouts(username, id):
+    id = int(id)
+    return "This is " + users[int(id) - 1].get_username() + "'s workout page"
 
 
 @app.route('/')

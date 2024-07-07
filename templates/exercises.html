@@ -6,16 +6,62 @@
     <title>List of Exercises</title>
     <script src="{{ url_for('static', filename='styles/styles_exercises.js') }}" defer></script>
 </head>
+<style>
+        .button-container {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .spring {
+            flex-grow: 1;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #04AA6D;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .button-wrapper{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            position: relative
+        }
+        .center-button{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%)
+        }
+        .button:hover {
+            background-color: #039e5a;
+        }
+    </style>
 <body>
     <div class="container">
         <h1>Exercise List</h1>
         <div class="exercise-list">
             <ul>
                 {% for exercise in exercises %}
-                    <li><a href="{{ url_for('exercise_detail', exercise_name=exercise.replace(' ', '_')) }}">{{ exercise }}</a></li>
+                    <li><a href="{{ url_for('exercise_detail', exercise_name=exercise.get_name().replace(' ', '_')) }}">{{ exercise.get_name() }}</a></li>
                 {% endfor %}
             </ul>
         </div>
+    <div class = 'button-container'>
+        <a href="{{ url_for('workouts', username = user.get_username(), id = user.get_id() )}}" class="button center-button">My Workouts</a>
+            <div class="spring"></div>
+            <button onclick="goBack()" class="button">Go back</button>
+        </div>
     </div>
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
 </body>
 </html>

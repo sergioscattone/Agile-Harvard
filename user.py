@@ -25,7 +25,6 @@ class User():
     '''def __repr__(self):
         return f' {self.exercise}'
     '''
-
     def able_to_login(self, email, password) -> bool:
         return email == self.email and password == self.password
     def get_username(self):
