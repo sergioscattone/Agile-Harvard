@@ -50,6 +50,14 @@ input[type="submit"] {
     font-size: 16px;
 }
 
+
+input[type="email"] {
+            margin-bottom: 15px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
 input[type="submit"]:hover {
     background-color: #0056b3;
 }
@@ -76,4 +84,30 @@ input[type="submit"]:hover {
     background-color: #f8d7da;
     color: #721c24;
     border: 1px solid #f5c6cb;
+}
+
+.verification-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 10px; /* Space between input and button */
+}
+.verification-container input[type = 'text']{
+    width : 260px;
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.send-code-btn {
+    padding: 4px 4px; /* Smaller padding */
+    border: 1px solid #ccc;
+    background-color: #0056b3;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    font-size: 12px; /* Smaller font size */
+    width : 100px;
+    height : 40px;
 }

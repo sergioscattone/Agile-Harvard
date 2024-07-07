@@ -1,12 +1,11 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Login</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles_login.css') }}">
-  </head>
-  <body>
-    <div class="login-container">
+{% extends "Base_for_login_and_signup.html" %}
+
+{% block title %}
+    This is the login page
+{% endblock %}
+
+{% block body %}
+<div class="login-container">
       <h2>Login</h2>
       <ul class="messages">
         <li class="success">For Guest Use: <br />**Username** = user1 <br />**Password** = 123456</li>
@@ -19,6 +18,8 @@
         <input type="password" id="password" name="password" required>
         <br>
         <input type="submit" value="Login">
+         <br>
+        <button class="redirect-btn" onclick="window.location.href='{{ url_for('signup') }}'">Go to Signup</button>
       </form>
       {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
@@ -30,5 +31,4 @@
         {% endif %}
       {% endwith %}
     </div>
-  </body>
-</html>
+{% endblock %}
