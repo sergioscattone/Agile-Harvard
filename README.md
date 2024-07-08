@@ -144,4 +144,4 @@ we have our Continuous Delivery system that builds our application automagically
 | Sergio | Having Jira and the Backlog already created help use to focus much more in just coding the software solution | Initially CI/CD configuration on digital ocean was quite difficult |  |
 | Ziyuan |  |  |  |
 | Marco |  |  |  |
-| Xingjian |  |   |  |
+| Xingjian | We successfully built the pop system and the signup system | we did not cooperate with others well |  |
