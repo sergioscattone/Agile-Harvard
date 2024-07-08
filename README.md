@@ -126,6 +126,7 @@ We have worked heavely in fixing unit tests to be aligned with our sprint goal.
 
 ## Sprint review - Feedback from Stakeholder
 <img width="474" alt="image" src="https://github.com/sergioscattone/Agile-Harvard/assets/28077819/68ea35b9-a716-4ea4-a3e8-357a8f142361">
+
 图形界面有所提升，建议避免使用统一渐变色，可以添加不同选项的logo/symbol 显得更直观，注意symbol 选择时的版权问题
 
 ### Translated:
