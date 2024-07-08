@@ -5,3 +5,4 @@ flask_sqlalchemy
 flask_mail
 flask_wtf
 dotenv
+setuptools
