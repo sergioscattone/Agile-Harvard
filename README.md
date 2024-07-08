@@ -141,7 +141,7 @@ we have our Continuous Delivery system that builds our application automagically
 ## Sprint Retrospective:
 | Name          | What went well | What went wrong | Action Items |
 | ------------- | ------------- | ------------- | ------------- |
-| Sergio |  |  |  |
+| Sergio | Having Jira and the Backlog already created help use to focus much more in just coding the software solution | Initially CI/CD configuration on digital ocean was quite difficult |  |
 | Ziyuan |  |  |  |
 | Marco |  |  |  |
 | Xingjian |  |   |  |
