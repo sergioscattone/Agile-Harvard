@@ -159,6 +159,9 @@ def mail_text():
     mail.send(message)
     return 'mail sent'
 
+@app.route('/check')
+def user_info():
+    return render_template('user_info.html', users = users)
 
 
 if __name__ == "__main__":

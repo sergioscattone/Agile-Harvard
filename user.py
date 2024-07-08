@@ -82,3 +82,6 @@ class User():
     def remove_all_workouts(self):
         self.workouts = []
         self.num_workouts = 0
+
+    def display(self):
+        return self.email + str(self.id)
