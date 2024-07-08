@@ -143,5 +143,5 @@ we have our Continuous Delivery system that builds our application automagically
 | ------------- | ------------- | ------------- | ------------- |
 | Sergio | Having Jira and the Backlog already created help use to focus much more in just coding the software solution | Initially CI/CD configuration on digital ocean was quite difficult |  |
 | Ziyuan | We have several complete login/Sign up pages, plus some good looks of other pages | some unit tests were always failed, sometimes we lack of alignment with each others | more improvement on UI |
-| Marco |  |  |  |
+| Marco | We were able to make some progress on the stakeholder UI requirements | We might need more stakeholder involvement | need to talk to stakeholder more often |
 | Xingjian | We successfully built the pop system and the signup system | we did not cooperate with others well |  |
