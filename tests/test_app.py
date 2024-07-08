@@ -11,7 +11,7 @@ def client():
         yield client
 
 
-def get_context_variable(response_data, variable_name):
+def get_context_variable(response_data):
     # Helper function to extract a variable from the template context
     start = response_data.find(b'{{') + 2
     end = response_data.find(b'}}')
@@ -39,8 +39,9 @@ def test_incorrect_page(client):
     rv = client.post('/sites')
     assert rv.status_code == 404
 
-# if there is no login then return unallowed
-def test_unallowed_exercise_page(client):
+
+# if there is no login then return not allowed
+def test_not_allowed_exercise_page(client):
     rv = client.post('/exercises')
     assert rv.status_code == 404
 
@@ -48,8 +49,8 @@ def test_unallowed_exercise_page(client):
 # check that there is at least 1 exercise in the list
 def test_check_exercises_number(client):
     rv = client.post('/exercises')
-    exercisess = get_context_variable(rv.data, b'exercisess')
-    assert len(exercisess) >= 1
+    exercises = get_context_variable(rv.data)
+    assert len(exercises) >= 1
 
 
 def test_exercise_bicep_curl_details_page(client):
@@ -61,13 +62,16 @@ def test_exercise_jackknife_situps_details_page(client):
     rv = client.get('/exercises/Jacknife_Situps')
     assert rv.status_code == 200
 
+
 def test_exercise_jogging_details_page(client):
     rv = client.get('/exercises/Jogging')
     assert rv.status_code == 200
 
+
 def test_exercise_hiking_details_page(client):
     rv = client.get('/exercises/Hiking')
     assert rv.status_code == 200
+
 
 def test_exercise_table_tennis_page(client):
     rv = client.get('/exercises/Table_Tennis')
