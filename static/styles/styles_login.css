@@ -40,6 +40,20 @@ input[type="text"], input[type="password"] {
     border-radius: 4px;
 }
 
+.redirect-btn {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button[type="submit"]:hover, .redirect-btn:hover {
+    background-color: #0056b3; /* Change background color on hover */
+}
+
+
 input[type="submit"] {
     padding: 10px;
     background-color: #007bff;
@@ -110,4 +124,28 @@ input[type="submit"]:hover {
     font-size: 12px; /* Smaller font size */
     width : 100px;
     height : 40px;
+}
+
+.send-code-btn:hover{
+    background-color: #0065b3;
+}
+.header {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.nav-btn {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 10px; /* Space between the buttons */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+.nav-btn:hover {
+    background-color: #0056b3; /* Change background color on hover */
 }

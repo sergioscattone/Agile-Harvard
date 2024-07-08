@@ -1,0 +1,15 @@
+{% extends "Base_for_login_and_signup.html" %}
+
+{% block title %}
+    Verify Email
+{% endblock %}
+
+{% block body %}
+    <div class="verify-container">
+        <form method="POST" action="{{ url_for('verify') }}">
+            <label for="verificationCode">Verification Code</label>
+            <input type="text" id="verificationCode" name="verificationCode" required>
+            <button type="submit">Verify</button>
+        </form>
+    </div>
+{% endblock %}

@@ -6,6 +6,10 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles_login.css') }}">
   </head>
   <body>
+      <div class="header">
+        <button class="nav-btn" onclick="window.location.href='{{ url_for('login') }}'">Login</button>
+        <button class="nav-btn" onclick="window.location.href='{{ url_for('signup') }}'">Sign Up</button>
+    </div>
     {% block body %}{% endblock %}
   </body>
 </html>

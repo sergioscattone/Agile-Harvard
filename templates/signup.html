@@ -1,42 +1,61 @@
 {% extends "Base_for_login_and_signup.html" %}
 
 {% block title %}
-    This is the signin page
+    Signup
 {% endblock %}
 
 {% block body %}
-
     <div class="login-container">
-    <h2>Signup</h2>
-      <ul>
-      <form method="POST" action="{{ url_for('signup') }}">
-          <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-        <br>
-        <label for="verificationCode">Verification Code:</label>
-
-        <div class = "verification-container">
-
-        <input type="text" id="verificationCode" name="verificationCode" required>
-        <button type="button" class="send-code-btn" id="sendCodeBtn">Send Verification Code</button>
-        </div>
-        <br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-        <br>
-        <label for="confirmPassword">Confirm Password:</label>
-        <input type="password" id="confirmPassword" name="confirmPassword" required>
-          <input type="submit" value="Signup">
-      </form>
-</ul>
-          {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-          <ul class="messages">
-          {% for category, message in messages %}
-            <li class="{{ category }}">{{ message }}</li>
-          {% endfor %}
-          </ul>
-        {% endif %}
-      {% endwith %}
+        <h2>Signup</h2>
+        <ul>
+            <form method="POST" action="{{ url_for('signup') }}">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <br>
+                <label for="verificationCode">Verification Code:</label>
+                <div class="verification-container">
+                    <input type="text" id="verificationCode" name="verificationCode" required>
+                    <button type="button" class="send-code-btn" id="sendCodeBtn">Send Verification Code</button>
+                </div>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <br>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+                <input type="submit" value="Signup">
+                <br>
+                <button class="redirect-btn" type="button" onclick="window.location.href='{{ url_for('login') }}'">Go to Login</button>
+            </form>
+        </ul>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <ul class="messages">
+                    {% for category, message in messages %}
+                        <li class="{{ category }}">{{ message }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        {% endwith %}
     </div>
+
+    <script>
+        document.getElementById('sendCodeBtn').addEventListener('click', function() {
+            const email = document.getElementById('email').value;
+            fetch('{{ url_for("send_verification_code") }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email: email })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
 {% endblock %}
