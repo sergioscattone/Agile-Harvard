@@ -120,9 +120,10 @@ class Testing(unittest.TestCase):
 
     # test the creation of an user
     def test_create_user(self):
+        id = 1
         email = "user@email.com"
         password = "password"
-        user = User(email, password)
+        user = User(id, email, password)
 
         self.assertEqual(email, user.email, "User email does not match")
         self.assertEqual(password, user.password, "User password does not match")
@@ -130,9 +131,10 @@ class Testing(unittest.TestCase):
         
     # test if the user is able to login
     def test_user_is_able_to_login(self):
+        id = 1
         email = "user@email.com"
         password = "password"
-        user = User(email, password)
+        user = User(id, email, password)
 
         # here the use is able to loggin
         self.assertEqual(True, user.able_to_login(email, password))
@@ -140,9 +142,10 @@ class Testing(unittest.TestCase):
 
     # test the activation of an user
     def test_activate_user(self):
+        id = 1
         email = "user@email.com"
         password = "password"
-        user = User(email, password)
+        user = User(id, email, password)
         self.assertEqual(False, user.active, "User activate does not match")
 
         # we activate the user 
@@ -154,32 +157,36 @@ class Testing(unittest.TestCase):
     # test get id from user
     def test_get_id_from_user(self):
         # Create user
+        id = 1
         email = "user@email.com"
         password = "password"
-        user = User(email, password)
+        user = User(id, email, password)
         self.assertEqual(1, user.id)
 
         # Create another user, ID should be next number
+        id = 2
         email = "user2@email.com"
         password = "password2"
-        user2 = User(email, password)
+        user2 = User(id, email, password)
         self.assertEqual(2, user2.id)
         User.numbers = 0
     
     # test get username from suer
     def test_get_username_from_user(self):
         # Create user
+        id = 1
         email = "user@email.com"
         password = "password"
-        user = User(email, password)
+        user = User(id, email, password)
         self.assertEqual(email, user.get_username())
         User.numbers = 0
 
     # test the deactivation of an user
     def test_deactivate_user(self):
+        id = 1
         email = "user@email.com"
         password = "password"
-        user = User(email, password)
+        user = User(id, email, password)
         user.activate()
         self.assertEqual(True, user.active, "User activate does not match")
         user.deactivate()
@@ -189,9 +196,10 @@ class Testing(unittest.TestCase):
     # test user gets deactivated after max attempts to login
     def test_user_gets_deactivated_after_max_attempts_to_login(self):
         # Create user
+        id = 1
         email = "user@email.com"
         password = "password"
-        user = User(email, password)
+        user = User(id, email, password)
         # we verify the user is active
         user.activate()
         self.assertEqual(True, user.active)
@@ -211,9 +219,10 @@ class Testing(unittest.TestCase):
     # test remove workouts as user
     def test_remove_workouts_as_user(self):
         # Create user
+        id = 1
         email = "user@email.com"
         password = "password"
-        user = User(email, password)
+        user = User(id, email, password)
 
         # Create exercise
         first_exercise_id = 1
@@ -252,9 +261,10 @@ class Testing(unittest.TestCase):
     # test remove all workouts as user
     def test_remove_all_workouts_as_user(self):
         # Create user
+        id = 1
         email = "user@email.com"
         password = "password"
-        user = User(email, password)
+        user = User(id, email, password)
 
         # Create exercise
         first_exercise_id = 1
@@ -304,9 +314,10 @@ class Testing(unittest.TestCase):
             first_exercise_description)
         
         # Create user
+        id = 1
         email = "user@email.com"
         password = "password"
-        user = User(email, password)
+        user = User(id, email, password)
 
         # Create exercise history for user\
         id = 1
@@ -321,14 +332,16 @@ class Testing(unittest.TestCase):
     # Fetch history of exercises for an user
     def test_get_history_from_user(self):
         # Create first user
+        id = 1
         email = "user@email.com"
         password = "password"
-        first_user = User(email, password)
+        first_user = User(id, email, password)
 
         # Create second user
+        id = 2
         email = "user2@email.com"
         password = "password2"
-        second_user = User(email, password)
+        second_user = User(id, email, password)
 
         amount_exercises_to_test = 3
         exercises_created = []
@@ -372,9 +385,10 @@ class Testing(unittest.TestCase):
     # test get_num_workouts from user
     def test_get_num_workouts(self):
         # Create first user
+        id = 1
         email = "user@email.com"
         password = "password"
-        user = User(email, password)
+        user = User(id, email, password)
         self.assertEqual(0, user.get_num_workouts())
 
         # Assert that num_workouts increases when we create a workout
