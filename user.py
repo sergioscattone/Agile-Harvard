@@ -3,7 +3,7 @@ from typing import List
 
 
 class User():
-    max_attempts: int = 5
+    max_attempts: int = 10000
     def __init__(self, id, email: str, password: str):
         self.id = id
         self.email = email
