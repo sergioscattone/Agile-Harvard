@@ -1,7 +1,5 @@
 from flask import Flask, render_template, request, redirect, url_for, flash, session, jsonify, get_flashed_messages
 from flask_mail import Mail, Message
-from flask_wtf import CSRFProtect
-from dotenv import load_dotenv
 import os
 import random
 import string
