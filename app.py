@@ -51,8 +51,7 @@ def login():
                 session['username'] = username
                 flash('Login successful!', 'success')
                 return redirect(url_for('index', username=username, id=user.get_id()))
-        else:
-            flash('Invalid credentials', 'danger')
+        flash('Invalid credentials', 'danger')
     return render_template('login.html')
 
 @app.route('/<username>/<id>/exercises')
