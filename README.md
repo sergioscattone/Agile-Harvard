@@ -142,6 +142,6 @@ we have our Continuous Delivery system that builds our application automagically
 | Name          | What went well | What went wrong | Action Items |
 | ------------- | ------------- | ------------- | ------------- |
 | Sergio | Having Jira and the Backlog already created help use to focus much more in just coding the software solution | Initially CI/CD configuration on digital ocean was quite difficult |  |
-| Ziyuan |  |  |  |
+| Ziyuan | We have several complete login/Sign up pages, plus some good looks of other pages | some unit tests were always failed, sometimes we lack of alignment with each others | more improvement on UI |
 | Marco |  |  |  |
 | Xingjian | We successfully built the pop system and the signup system | we did not cooperate with others well |  |
