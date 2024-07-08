@@ -129,8 +129,12 @@ We have worked heavely in fixing unit tests to be aligned with our sprint goal.
 ### Translated:
 "It is recommended to enrich the content, increase the graphical interface, and improve user friendliness."
 
-## Continues Integration
-Here you can see that we have our Continuous Integration system where all push only to master, and Continues Delivery that builds our application automagically whenever the build is "green" (when test passes) and if the test do not pass (red) it does not push that broken build to prod: https://octopus-app-h8uaj.ondigitalocean.app/
+## Continuous Delivery
+We have only one main branch where we all push:
+![continuous_delivery](continuous_delivery.png)
+
+## Continuous Integration
+we have our Continuous Delivery system that builds our application automagically whenever the build is "green" (when test passes) and if the test do not pass (red) it does not push that broken build to prod: https://octopus-app-h8uaj.ondigitalocean.app/
 ![ci_cd](ci_cd.png)
 
 
