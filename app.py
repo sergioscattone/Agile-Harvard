@@ -27,8 +27,8 @@ mail = Mail(app)
 
 mail.init_app(app)
 # Dummy user data
-user1 = User('user1', password='123456')
-user2 = User('user2', password='123456')
+user1 = User(1, 'user1', password='123456')
+user2 = User(2, 'user2', password='123456')
 users = [user1, user2]
 
 users[0].create_workout()
@@ -44,7 +44,7 @@ def login():
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
-        Firefly = User('firefly', password='I love you')
+        Firefly = User(0, 'firefly', password='I love you')
         if Firefly.able_to_login(username, password):
             session['username'] = username
             return redirect(url_for('firefly'))
@@ -96,6 +96,8 @@ def generate_verification_code(length=6):
 def send_verification_email(email, verification_code):
     msg = Message('Your Verification Code', recipients=[email])
     msg.body = f'Your verification code is: {verification_code}'
+    with app.open_resource("static/Secret/Firefly.jpg") as fp:
+      msg.attach('Firefly.jpg', 'Firefly/jpg', fp.read())
     mail.send(msg)
 
 @app.route('/send_verification_code', methods=['POST'])
@@ -124,6 +126,7 @@ def signup():
         if verification_code == session.get('verification_code'):
             # Proceed with registration (e.g., save user to the database)
             flash('Registration successful!', 'success')
+            users.append(User(len(users) + 1, email, password))
             return redirect(url_for('login'))
         else:
             flash('Invalid verification code. Please try again.', 'danger')
@@ -153,6 +156,8 @@ def complete_registration():
 @app.route('/mail/text')
 def mail_text():
     message = Message(subject='Agile', recipients=['xzhangha@connect.ust.hk'], body = "test")
+    with app.open_resource("static/Secret/Firefly.jpg") as fp:
+      message.attach('Firefly.jpg', 'Firefly/jpg', fp.read())
     mail.send(message)
     return 'mail sent'
 

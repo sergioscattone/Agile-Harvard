@@ -3,17 +3,15 @@ from typing import List
 
 
 class User():
-    numbers = 0
     max_attempts: int = 5
-    def __init__(self, email: str, password: str):
-        self.id = User.numbers + 1
+    def __init__(self, id, email: str, password: str):
+        self.id = id
         self.email = email
         self.password = password
         self.active = False
         self.workouts : List[Workout] = []
         self.attempts = 0
         self.num_workouts = 0
-        User.numbers += 1
 
 
     '''def update(self, first_name: str, last_name: str):

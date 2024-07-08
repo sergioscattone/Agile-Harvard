@@ -47,8 +47,8 @@
     <div class="container">
         <h1>Welcome to Flex Fit, {{ username }}! {{ user.get_id() }}</h1>
         <div class="button-container">
-            <button href="{{ url_for('exercises', username = user.get_username(), id = user.get_id() )}}" class="button">Exercises</button>
-            <button href="{{ url_for('workouts', username = user.get_username(), id = user.get_id() )}}" class="button">My Workouts</button>
+            <a href="{{ url_for('exercises', username = user.get_username(), id = user.get_id() )}}" class="button">Exercises</a>
+            <a href="{{ url_for('workouts', username = user.get_username(), id = user.get_id() )}}" class="button">My Workouts</a>
             <div class="spring">
             <button onclick = "goBack()" class="button">Log out</button>
             </div>
