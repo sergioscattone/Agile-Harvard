@@ -115,25 +115,33 @@ On the other hand, since we received a bad grade about the test that we needed t
 Put the test file in the root of the folder, as well as the classes for exercises, workloads and users. We can move them later when we figure what's the issue and for now focus on MVP
 
 ### what did you do in the last 24 hours that helped you meet the Sprint Goal?
-We have improved the UI with CSS and fade effects
+We have improved the UI with CSS and fade effects according to the feedback that we received from the stakholder.
+We have worked heavely in fixing unit tests to be aligned with our sprint goal. 
 
 ## Evidence of mob - pair programming
 ![sprint2 pair programming](sprint2_pair_programming.png)
- 
+
+## Burndown for second sprint
+![Sprint burndown 2](burndown2.png)
+
 ## Sprint review - Feedback from Stakeholder
 ![feedback](feedback.png)
 ### Translated:
 "It is recommended to enrich the content, increase the graphical interface, and improve user friendliness."
 
-## Continues Integration
-Here you can see that we have our Continuous Integration system where all push only to master, and Continues Delivery that builds our application automagically whenever the build is "green" (when test passes) and if the test do not pass (red) it does not push that broken build to prod: https://octopus-app-h8uaj.ondigitalocean.app/
+## Continuous Delivery
+We have only one main branch where we all push:
+![continuous_delivery](continuous_delivery.png)
+
+## Continuous Integration
+we have our Continuous Delivery system that builds our application automagically whenever the build is "green" (when test passes) and if the test do not pass (red) it does not push that broken build to prod: https://octopus-app-h8uaj.ondigitalocean.app/
 ![ci_cd](ci_cd.png)
 
 
 ## Sprint Retrospective:
 | Name          | What went well | What went wrong | Action Items |
 | ------------- | ------------- | ------------- | ------------- |
-| Sergio |  |  |  |
+| Sergio | Having Jira and the Backlog already created help use to focus much more in just coding the software solution | Initially CI/CD configuration on digital ocean was quite difficult |  |
 | Ziyuan |  |  |  |
 | Marco |  |  |  |
 | Xingjian |  |   |  |
