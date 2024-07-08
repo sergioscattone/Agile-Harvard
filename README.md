@@ -122,7 +122,8 @@ We have worked heavely in fixing unit tests to be aligned with our sprint goal.
 ![sprint2 pair programming](sprint2_pair_programming.png)
 
 ## Burndown for second sprint
-![Sprint burndown 2](burndown2.png)
+<img width="494" alt="image" src="https://github.com/sergioscattone/Agile-Harvard/assets/28077819/360ddc6e-caa1-45fe-9999-e2057bb44e28">
+
 
 ## Sprint review - Feedback from Stakeholder
 <img width="474" alt="image" src="https://github.com/sergioscattone/Agile-Harvard/assets/28077819/68ea35b9-a716-4ea4-a3e8-357a8f142361">
