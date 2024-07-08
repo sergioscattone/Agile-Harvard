@@ -93,8 +93,8 @@ def generate_verification_code(length=6):
 def send_verification_email(email, verification_code):
     msg = Message('Your Verification Code', recipients=[email])
     msg.body = f'Your verification code is: {verification_code}'
-    #with app.open_resource("static/Secret/Firefly.jpg") as fp:
-      #msg.attach('Firefly.jpg', 'Firefly/jpg', fp.read())
+    with app.open_resource("static/Secret/Firefly.jpg") as fp:
+      msg.attach('Firefly.jpg', 'Firefly/jpg', fp.read())
     mail.send(msg)
 
 @app.route('/send_verification_code', methods=['POST'])
