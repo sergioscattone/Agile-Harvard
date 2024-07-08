@@ -3,3 +3,4 @@ gunicorn
 pytest
 flask_sqlalchemy
 flask_mail
+flask_wtf
