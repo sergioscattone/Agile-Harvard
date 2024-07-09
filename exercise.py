@@ -26,4 +26,4 @@ Jogging = Exercise(4, 'Jogging', 'Balabala')
 Hiking = Exercise(5, 'Hiking', 'Balabala')
 Table_Tennis= Exercise(6, 'Table Tennis', 'Balabala')
 More = Exercise(7, 'More', 'Balabala')
-exercises= [Bicep_Curl, Jacknife_Situps, Swimming, Jogging, Hiking, Table_Tennis, More]
+exercises = [Bicep_Curl, Jacknife_Situps, Swimming, Jogging, Hiking, Table_Tennis, More]

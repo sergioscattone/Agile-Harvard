@@ -5,7 +5,8 @@ import random
 import string
 import config
 from user import User
-import exercise
+from exercise import Jacknife_Situps
+from exercise import Hiking
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'
@@ -30,8 +31,8 @@ user2 = User(2, 'user2', password='123456')
 users = [user1, user2]
 
 users[0].create_workout()
-users[0].add_exercise(exercise.Jacknife_Situps)
-users[0].add_exercise(exercise.Hiking)
+users[0].add_exercise(Jacknife_Situps)
+users[0].add_exercise(Hiking)
 
 @app.route('/')
 def login_redirect():

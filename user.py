@@ -69,7 +69,7 @@ class User():
             if workout.id == id:
                 return workout
 
-    def add_exercise(self, exercise, index):
+    def add_exercise(self, exercise, index = None):
         if index == None:
             self.workouts[self.num_workouts - 1].add(exercise)
         else:
