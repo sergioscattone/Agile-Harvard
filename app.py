@@ -56,8 +56,7 @@ def login():
 
 @app.route('/<username>/<id>/exercises')
 def exercises(username, id):
-    exercises = exercises
-    if 'username' in session:
+    if username in session:
         return render_template("exercises.html", exercises=exercises, user=users[int(id) - 1])
     return redirect(url_for('login'))
 
