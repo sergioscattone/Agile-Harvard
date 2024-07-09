@@ -34,6 +34,8 @@ class Workout:
             for exercise in self.exercises:
                 result += str(exercise.get_name()) + "\n\t"
         return result
+    def get_exercises(self):
+        return self.exercises
 
 """    def __repr__(self):
         return f' {self.exercises}'"""

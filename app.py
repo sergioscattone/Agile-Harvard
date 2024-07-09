@@ -5,7 +5,7 @@ import random
 import string
 import config
 from user import User
-import exercise
+from exercise import Jacknife_Situps, Hiking, exercises, Swimming
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'
@@ -30,8 +30,13 @@ user2 = User(2, 'user2', password='123456')
 users = [user1, user2]
 
 users[0].create_workout()
-users[0].add_exercise(exercise.Jacknife_Situps)
-users[0].add_exercise(exercise.Hiking)
+users[0].add_exercise(Jacknife_Situps)
+users[0].add_exercise(Hiking)
+users[0].create_workout()
+users[0].add_exercise(Swimming)
+users[0].add_exercise(Swimming)
+users[0].create_workout()
+
 
 @app.route('/')
 def login_redirect():
@@ -55,9 +60,8 @@ def login():
     return render_template('login.html')
 
 @app.route('/<username>/<id>/exercises')
-def exercises(username, id):
-    exercises = exercise.exercises
-    if 'username' in session:
+def exercises_page(username, id):
+    if username == session['username']:
         return render_template("exercises.html", exercises=exercises, user=users[int(id) - 1])
     return redirect(url_for('login'))
 

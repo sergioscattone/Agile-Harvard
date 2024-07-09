@@ -1,12 +1,12 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <title>MyWorkouts</title>
     <script src="{{ url_for('static', filename='styles/styles_exercises.js') }}" defer></script>
-</head>
-<style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='styles/styles_myworkouts.js') }}"></script>
+    <style>
         .button-container {
             display: flex;
             width: 100%;
@@ -28,34 +28,68 @@
             transition: background-color 0.3s ease;
             background: linear-gradient(135deg, #ecdddd 30%, #008731 100%);
         }
-        .button-wrapper{
+        .button-wrapper {
             display: flex;
             justify-content: center;
             width: 100%;
-            position: relative
+            position: relative;
         }
-        .center-button{
+        .center-button {
             position: absolute;
             left: 50%;
-            transform: translateX(-50%)
-
+            transform: translateX(-50%);
         }
         .button:hover {
             background-color: #039f5b;
             transform: translateY(-2px);
         }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            width: 100%;
+        }
+        .toggleButton {
+            padding: 10px 20px;
+            background-color: #04AA6D;
+            color: #000000;
+            border: none;
+            width: 100%;
+            height: 50pt;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background: linear-gradient(135deg, #ecdddd 30%, #008731 100%);
+        }
+        .toggleButton:hover {
+            background-color: #039f5b;
+            transform: translateY(-2px);
+        }
+        .info {
+            display: none;
+            margin-top: 10px;
+        }
     </style>
+</head>
 <body>
     <div class="container">
         <h1>Exercise List</h1>
         <div class="exercise-list">
             <ul>
                 {% for i in range(user.get_num_workouts()) %}
-                    <li><a>{{ user.get_workout()[-i].get_self() }}</a></li>
+                    <li>
+                        <button class="toggleButton" data-target="#info{{ i }}">{{ user.get_workout()[-i-1].get_self() }}</button>
+                        <div id="info{{ i }}" class="info">
+                            {% for exercise in user.get_workout()[-i-1].get_exercises() %}
+                                <p>{{ exercise.get_name() }}</p>
+                            {% endfor %}
+                        </div>
+                    </li>
                 {% endfor %}
             </ul>
         </div>
-    <div class = 'button-container'>
+        <div class="button-container">
             <div class="spring"></div>
             <button onclick="goBack()" class="button">Go back</button>
         </div>
@@ -64,6 +98,13 @@
         function goBack() {
             window.history.back();
         }
+
+        $(document).ready(function() {
+            $('.toggleButton').click(function() {
+                var target = $(this).data('target');
+                $('#' + target).toggle();
+            });
+        });
     </script>
 </body>
 </html>
