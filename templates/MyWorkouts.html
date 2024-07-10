@@ -7,6 +7,14 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='styles/styles_myworkouts.js') }}"></script>
     <style>
+         p
+            {
+             font-family: "Myriad Pro", "sans-serif";
+             font-size: 12pt;
+             color: #000000;
+             text-align: center;
+            }
+
         .button-container {
             display: flex;
             width: 100%;
@@ -70,6 +78,13 @@
             display: none;
             margin-top: 10px;
         }
+        .small-container {
+        text-align: center;
+        background-color: #d6d6d6;
+        padding: 10px;
+        border-radius: 10px;
+        margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -82,7 +97,9 @@
                         <button class="toggleButton" data-target="#info{{ i }}">{{ user.get_workout()[-i-1].get_self() }}</button>
                         <div id="info{{ i }}" class="info">
                             {% for exercise in user.get_workout()[-i-1].get_exercises() %}
+                                <div class="small-container">
                                 <p>{{ exercise.get_name() }}</p>
+                                </div>
                             {% endfor %}
                         </div>
                     </li>
@@ -90,6 +107,7 @@
             </ul>
         </div>
         <div class="button-container">
+        <a href="{{ url_for('create_page', username=user.get_username(), id=user.get_id())}}" class="button">Create Workout</a>
             <div class="spring"></div>
             <button onclick="goBack()" class="button">Go back</button>
         </div>

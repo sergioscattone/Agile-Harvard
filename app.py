@@ -167,5 +167,24 @@ def user_info():
     return render_template('user_info.html', users = users)
 
 
+@app.route('/<username>/<id>/workouts/create_workouts')
+def create_page(username, id):
+    if username == session['username']:
+        return render_template("create_workouts.html", exercises=exercises, user=users[int(id) - 1])
+    return redirect(url_for('login'))
+
+@app.route('/<username>/<id>/workouts/create_workouts', methods=['GET', 'POST'])
+def create_new_workout(username, id):
+    if request.method == 'POST':
+        name = request.form['workout']
+        description = request.form['description']
+        if 'username' in session and username == session['username']:
+            user = users[int(id) - 1]
+            user.get_workout().append(user.create_workout(name, description))
+            if user.get_workout()[-1] is None:
+                user.get_workout().pop()
+        return redirect(url_for('workouts', username=username, id=id))
+    return render_template('create_workouts.html', username=username, user=users[int(id) - 1])
+
 if __name__ == "__main__":
     app.run(debug=True)

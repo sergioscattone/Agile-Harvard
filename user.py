@@ -48,7 +48,7 @@ class User():
         return self.email
 
     def get_workout(self) -> List[Workout]:
-        return self.workouts
+        return self.workouts if self.workouts is not None else []
 
     def create_workout(self, name = None, discription = ""):
         self.workouts.append(Workout(len(self.workouts) + 1, [], name, discription))
