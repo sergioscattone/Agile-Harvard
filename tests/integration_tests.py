@@ -29,12 +29,6 @@ def test_login_page(client):
     assert rv.status_code == 200
 
 
-# def test_welcome_title(client):
-#     """Test welcome title"""
-#     rv = client.get('/')
-#     assert b'Welcome' in rv.data
-
-
 def test_incorrect_page(client):
     rv = client.post('/sites')
     assert rv.status_code == 404

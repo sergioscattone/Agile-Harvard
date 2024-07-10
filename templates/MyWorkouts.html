@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -89,20 +90,21 @@
 </head>
 <body>
     <div class="container">
-        <h1>Exercise List</h1>
+        <h1>workout List</h1>
         <div class="exercise-list">
             <ul>
                 {% for i in range(user.get_num_workouts()) %}
-                    <li>
-                        <button class="toggleButton" data-target="#info{{ i }}">{{ user.get_workout()[-i-1].get_self() }}</button>
-                        <div id="info{{ i }}" class="info">
-                            {% for exercise in user.get_workout()[-i-1].get_exercises() %}
-                                <div class="small-container">
-                                <p>{{ exercise.get_name() }}</p>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    </li>
+                    <li><a href="{{ url_for('workout_detail', username=user.get_username(), id=user.get_id(), workout_name=user.get_workout()[-i].get_self().replace(' ', '_')) }}">{{ user.get_workout()[-i].get_self() }}</a></li>
+{#                    <li>#}
+{#                        <button class="toggleButton" data-target="#info{{ i }}">{{ user.get_workout()[-i-1].get_self() }}</button>#}
+{#                        <div id="info{{ i }}" class="info">#}
+{#                            {% for exercise in user.get_workout()[-i-1].get_exercises() %}#}
+{#                                <div class="small-container">#}
+{#                                <p>{{ exercise.get_name() }}</p>#}
+{#                                </div>#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+{#                    </li>#}
                 {% endfor %}
 
             </ul>
@@ -118,12 +120,12 @@
             window.history.back();
         }
 
-        $(document).ready(function() {
-            $('.toggleButton').click(function() {
-                var target = $(this).data('target');
-                $('#' + target).toggle();
-            });
-        });
+        {#$(document).ready(function() {#}
+        {#    $('.toggleButton').click(function() {#}
+        {#        var target = $(this).data('target');#}
+        {#        $('#' + target).toggle();#}
+        {#    });#}
+        {#});#}
     </script>
 </body>
 </html>

@@ -11,7 +11,7 @@ class Exercise():
         self.name = name
         self.description = description
         return self
-    
+
     def get_name(self):
         return self.name
 
@@ -22,12 +22,16 @@ class Exercise():
         print(self.name)
         print(self.description)
 
+    def __repr__(self):
+        return f' {self.exercise}'
+
+
 Bicep_Curl = Exercise(1, 'Bicep Curl', 'Balabala')
 Jacknife_Situps = Exercise(2, 'Jacknife Situps', 'Balabala')
 Swimming = Exercise(3, 'Swimming', 'Balabala')
 Jogging = Exercise(4, 'Jogging', 'Balabala')
 Hiking = Exercise(5, 'Hiking', 'Balabala')
-Table_Tennis= Exercise(6, 'Table Tennis', 'Balabala')
+Table_Tennis = Exercise(6, 'Table Tennis', 'Balabala')
 More = Exercise(7, 'More', 'Balabala')
 exercises: List[Exercise] = [
     Bicep_Curl,
