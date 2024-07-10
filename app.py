@@ -29,13 +29,6 @@ user1 = User(1, 'user1', password='123456')
 user2 = User(2, 'user2', password='123456')
 users = [user1, user2]
 
-# users[0].create_workout("Example Workout 1", "description")
-# users[0].add_exercise(Jacknife_Situps)
-# users[0].add_exercise(Hiking)
-# users[0].create_workout()
-# users[0].add_exercise(Jacknife_Situps)
-# users[0].add_exercise(Hiking)
-
 
 def create_sample_workouts(user):
     user.create_workout("Example Workout 1", "A default example workout")

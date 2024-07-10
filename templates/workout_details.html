@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,19 +49,21 @@
         <h1>Exercise List</h1>
         <div class="exercise-list">
             <ul>
-{#                {% if user.find_workout_by_name(workout_name) %}#}
-                    {% for exercise in user.find_workout_by_name(workout_name.replace('_', ' ').replace('\n', "")).get_exercises() %}
-                        <li><a>{{ exercise.get_name() }}</a></li>
-                    {% endfor %}
-{#                {% endif %}#}
+                {% for exercise in user.find_workout_by_name(workout_name.replace('_', ' ').replace('\n', "")).get_exercises() %}
+                    <li><a href="{{ url_for('exercise_detail', exercise_name=exercise.get_name().replace(' ', '_')) }}">{{ exercise.get_name() }}</a></li>
+                {% endfor %}
             </ul>
-        </div>
 {#    <div class = 'button-container'>#}
 {#        <a href="{{ url_for('exercise_detail', exercise_name=exercise.get_name().replace(' ', '_')) }}" class="button">My Workouts</a>#}
 {#            <div class="spring"></div>#}
 {#            <button onclick="goBack()" class="button">Go back</button>#}
 {#        </div>#}
 {#    </div>#}
+            <div class="button-container">
+                <div class="spring"></div>
+                <button onclick="goBack()" class="button">Go back</button>
+            </div>
+        </div>
     <script>
         function goBack() {
             window.history.back();
