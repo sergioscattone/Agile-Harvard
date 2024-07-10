@@ -50,7 +50,7 @@
         <div class="exercise-list">
             <ul>
                 {% for exercise in user.find_workout_by_name(workout_name.replace('_', ' ').replace('\n', "")).get_exercises() %}
-                    <li><a href="{{ url_for('exercise_detail', exercise_name=exercise.get_name().replace(' ', '_')) }}">{{ exercise.get_name() }}</a></li>
+                    <li><a href="{{ url_for('exercise_detail', username = user.get_username(), id = user.get_id(), exercise_id = exercise.get_id()) }}">{{ exercise.get_name() }}</a></li>
                 {% endfor %}
             </ul>
 {#    <div class = 'button-container'>#}

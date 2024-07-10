@@ -28,16 +28,7 @@ mail.init_app(app)
 user1 = User(1, 'user1', password='123456')
 user2 = User(2, 'user2', password='123456')
 users = [user1, user2]
-
 users[0].create_workout()
-users[0].create_workout()
-users[0].create_workout()
-users[0].create_workout()
-users[0].create_workout()
-users[0].create_workout()
-users[0].create_workout()
-users[0].create_workout()
-
 users[0].add_exercise(Jacknife_Situps)
 users[0].add_exercise(Hiking)
 users[0].create_workout()
@@ -115,9 +106,21 @@ def register_exercise():
 def index(username, id):
     return render_template('index.html', username=username, user=users[int(id) - 1])
 
+
 @app.route('/<username>/<id>/workouts')
 def workouts(username, id):
     return render_template('MyWorkouts.html', username=username, user=users[int(id) - 1])
+    user = users[int(id) - 1]
+    # Create example workout if user does not have any
+    if user.get_num_workouts() < 2:
+        create_sample_workouts(user)
+    return render_template('MyWorkouts.html', username=username, user=user)
+
+
+@app.route('/<username>/<id>/workouts/<workout_name>')
+def workout_detail(username, id, workout_name):
+    user = users[int(id) - 1]
+    return render_template('workout_details.html', username=username, id=id, user=user, workout_name=workout_name)
 
 @app.route('/')
 def landscape():
