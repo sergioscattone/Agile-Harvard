@@ -5,7 +5,7 @@ import random
 import string
 import config
 from user import User
-from exercise import Jacknife_Situps, Hiking, exercises, Swimming
+from exercise import Jacknife_Situps, Bicep_Curl, Hiking, exercises, Swimming
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///yourdatabase.db'
@@ -29,18 +29,27 @@ user1 = User(1, 'user1', password='123456')
 user2 = User(2, 'user2', password='123456')
 users = [user1, user2]
 
-users[0].create_workout()
-users[0].add_exercise(Jacknife_Situps)
-users[0].add_exercise(Hiking)
-users[0].create_workout()
-users[0].add_exercise(Swimming)
-users[0].add_exercise(Swimming)
-users[0].create_workout()
+# users[0].create_workout("Example Workout 1", "description")
+# users[0].add_exercise(Jacknife_Situps)
+# users[0].add_exercise(Hiking)
+# users[0].create_workout()
+# users[0].add_exercise(Jacknife_Situps)
+# users[0].add_exercise(Hiking)
+
+
+def create_sample_workouts(user):
+    user.create_workout("Example Workout 1", "A default example workout")
+    user.add_exercise(Jacknife_Situps)
+    user.add_exercise(Bicep_Curl)
+    user.create_workout("Example Workout 2", "Another default example workout")
+    user.add_exercise(Bicep_Curl)
+    user.add_exercise(Swimming)
 
 
 @app.route('/')
 def login_redirect():
     return redirect(url_for('login'))
+
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -59,11 +68,13 @@ def login():
         flash('Invalid credentials', 'danger')
     return render_template('login.html')
 
+
 @app.route('/<username>/<id>/exercises')
 def exercises_page(username, id):
     if username == session['username']:
         return render_template("exercises.html", exercises=exercises, user=users[int(id) - 1])
     return redirect(url_for('login'))
+
 
 @app.route('/logout')
 def logout():
@@ -71,28 +82,45 @@ def logout():
     flash('You have been logged out.', 'success')
     return redirect(url_for('login'))
 
+
 @app.route('/exercises/<exercise_name>')
 def exercise_detail(exercise_name):
     return render_template('exercise_details.html', exercise_name=exercise_name)
+
 
 @app.route('/<username>/<id>/index')
 def index(username, id):
     return render_template('index.html', username=username, user=users[int(id) - 1])
 
+
 @app.route('/<username>/<id>/workouts')
 def workouts(username, id):
-    return render_template('MyWorkouts.html', username=username, user=users[int(id) - 1])
+    user = users[int(id) - 1]
+    # Create example workout if user does not have any
+    if user.get_num_workouts() < 2:
+        create_sample_workouts(user)
+    return render_template('MyWorkouts.html', username=username, user=user)
+
+
+@app.route('/<username>/<id>/workouts/<workout_name>')
+def workout_detail(username, id, workout_name):
+    user = users[int(id) - 1]
+    return render_template('workout_details.html', username=username, id=id, user=user, workout_name=workout_name)
+
 
 @app.route('/')
 def landscape():
     return render_template('login.html')
 
+
 @app.route('/firefly')
 def firefly():
     return render_template('secret/firefly.html')
 
+
 def generate_verification_code(length=6):
     return ''.join(random.choices(string.ascii_uppercase + string.digits, k=length))
+
 
 def send_verification_email(email, verification_code):
     msg = Message('Your Verification Code', recipients=[email])
@@ -100,6 +128,7 @@ def send_verification_email(email, verification_code):
     with app.open_resource("static/Secret/Firefly.jpg") as fp:
       msg.attach('Firefly.jpg', 'Firefly/jpg', fp.read())
     mail.send(msg)
+
 
 @app.route('/send_verification_code', methods=['POST'])
 def send_verification_code():
@@ -114,6 +143,7 @@ def send_verification_code():
     send_verification_email(email, verification_code)
 
     return jsonify({'message': 'Verification code sent to your email.'})
+
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -134,6 +164,7 @@ def signup():
 
     return render_template('signup.html')
 
+
 @app.route('/verify', methods=['GET', 'POST'])
 def verify():
     if request.method == 'POST':
@@ -149,22 +180,25 @@ def verify():
 
     return render_template('verify.html')
 
+
 @app.route('/complete_registration', methods=['GET', 'POST'])
 def complete_registration():
     # Logic to complete the registration process
     return 'Registration completed'
 
+
 @app.route('/mail/text')
 def mail_text():
-    message = Message(subject='Agile', recipients=['xzhangha@connect.ust.hk'], body = "test")
+    message = Message(subject='Agile', recipients=['xzhangha@connect.ust.hk'], body="test")
     with app.open_resource("static/Secret/Firefly.jpg") as fp:
-      message.attach('Firefly.jpg', 'Firefly/jpg', fp.read())
+        message.attach('Firefly.jpg', 'Firefly/jpg', fp.read())
     mail.send(message)
     return 'mail sent'
 
+
 @app.route('/check')
 def user_info():
-    return render_template('user_info.html', users = users)
+    return render_template('user_info.html', users=users)
 
 
 @app.route('/<username>/<id>/workouts/create_workouts')

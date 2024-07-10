@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>List of Exercises</title>
+    <script src="{{ url_for('static', filename='styles/styles_exercises.js') }}" defer></script>
+</head>
+<style>
+        .button-container {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .spring {
+            flex-grow: 1;
+        }
+        .button {
+            padding: 10px 20px;
+            background-color: #04AA6D;
+            color: #000000;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background: linear-gradient(135deg, #ecdddd 30%, #008731 100%);
+        }
+        .button-wrapper{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            position: relative
+        }
+        .center-button{
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%)
+
+        }
+        .button:hover {
+            background-color: #039f5b;
+            transform: translateY(-2px);
+        }
+    </style>
+<body>
+    <div class="container">
+        <h1>Exercise List</h1>
+        <div class="exercise-list">
+            <ul>
+{#                {% if user.find_workout_by_name(workout_name) %}#}
+                    {% for exercise in user.find_workout_by_name(workout_name.replace('_', ' ').replace('\n', "")).get_exercises() %}
+                        <li><a>{{ exercise.get_name() }}</a></li>
+                    {% endfor %}
+{#                {% endif %}#}
+            </ul>
+        </div>
+{#    <div class = 'button-container'>#}
+{#        <a href="{{ url_for('exercise_detail', exercise_name=exercise.get_name().replace(' ', '_')) }}" class="button">My Workouts</a>#}
+{#            <div class="spring"></div>#}
+{#            <button onclick="goBack()" class="button">Go back</button>#}
+{#        </div>#}
+{#    </div>#}
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+</body>
+</html>

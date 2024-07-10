@@ -4,21 +4,21 @@ from typing import List
 
 class User():
     max_attempts: int = 10000
+
     def __init__(self, id, email: str, password: str):
         self.id = id
         self.email = email
         self.password = password
         self.active = False
-        self.workouts : List[Workout] = []
+        self.workouts: List[Workout] = []
         self.attempts = 0
         self.num_workouts = 0
-
 
     '''def update(self, first_name: str, last_name: str):
         self.first_name = first_name
         self.last_name = last_name
         return self'''
-    
+
     def activate(self):
         self.active = True
 
@@ -50,12 +50,12 @@ class User():
     def get_workout(self) -> List[Workout]:
         return self.workouts if self.workouts is not None else []
 
-    def create_workout(self, name = None, discription = ""):
-        self.workouts.append(Workout(len(self.workouts) + 1, [], name, discription))
+    def create_workout(self, name=None, description=""):
+        self.workouts.append(Workout(len(self.workouts) + 1, [], name, description))
         self.num_workouts += 1
 
     def delete_workout(self, workout):
-        self.workout.remove(workout)
+        self.workouts.remove(workout)
         self.num_workouts -= 1
 
     def remove_workout_by_id(self, id):
@@ -63,6 +63,12 @@ class User():
             if workout.id == id:
                 self.workouts.remove(workout)
                 self.num_workouts -= 1
+
+    def find_workout_by_name(self, name):
+        for workout in self.workouts:
+            if name in workout.name:
+                return workout
+        return None
 
     def find_workout_by_id(self, id):
         for workout in self.workouts:

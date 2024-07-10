@@ -28,6 +28,9 @@ class Workout:
             if exercise.id == exercise_id:
                 return exercise
 
+    def get_exercises(self):
+        return self.exercises
+
     def get_self(self, name_needed = False):
         result = self.name + '\n'
         if name_needed:
