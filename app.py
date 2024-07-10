@@ -72,6 +72,7 @@ def logout():
 
 @app.route('/<username>/<id>/<exercise_id>/exercise_detail')
 def exercise_detail(username, id, exercise_id):
+    check_username(username)
     return render_template('exercise_details.html', exercise_name=exercises[int(id) - 1].get_name(), exercise = exercises[int(id) - 1],user = users[int(id) - 1],id = id, exercise_id = exercise_id)
 
 
@@ -104,11 +105,13 @@ def register_exercise():
 
 @app.route('/<username>/<id>/index')
 def index(username, id):
-    return render_template('index.html', username=username, user=users[int(id) - 1])
-
+    if username == session['username']:
+        return render_template('index.html', username=username, user=users[int(id) - 1])
+    return redirect(url_for('login'))
 
 @app.route('/<username>/<id>/workouts')
 def workouts(username, id):
+    check_username(username)
     return render_template('MyWorkouts.html', username=username, user=users[int(id) - 1])
     user = users[int(id) - 1]
     # Create example workout if user does not have any
@@ -211,6 +214,11 @@ def create_page(username, id):
     if username == session['username']:
         return render_template("create_workouts.html", exercises=exercises, user=users[int(id) - 1])
     return redirect(url_for('login'))
+
+def check_username(username):
+    if username != session['username']:
+        return redirect(url_for('login'))
+
 
 @app.route('/<username>/<id>/workouts/create_workouts', methods=['GET', 'POST'])
 def create_new_workout(username, id):
