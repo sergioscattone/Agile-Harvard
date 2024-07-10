@@ -186,10 +186,10 @@ Pending image...
 ### Translated:
 
 ## Continuous Delivery
-This haven't changed
+This has't changed
 
 ## Continuous Integration
-This haven't changed
+This has't changed
 
 
 ## Sprint Retrospective:
