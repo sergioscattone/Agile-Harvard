@@ -30,6 +30,14 @@ user2 = User(2, 'user2', password='123456')
 users = [user1, user2]
 
 users[0].create_workout()
+users[0].create_workout()
+users[0].create_workout()
+users[0].create_workout()
+users[0].create_workout()
+users[0].create_workout()
+users[0].create_workout()
+users[0].create_workout()
+
 users[0].add_exercise(Jacknife_Situps)
 users[0].add_exercise(Hiking)
 users[0].create_workout()
@@ -71,9 +79,37 @@ def logout():
     flash('You have been logged out.', 'success')
     return redirect(url_for('login'))
 
-@app.route('/exercises/<exercise_name>')
-def exercise_detail(exercise_name):
-    return render_template('exercise_details.html', exercise_name=exercise_name)
+@app.route('/<username>/<id>/<exercise_id>/exercise_detail')
+def exercise_detail(username, id, exercise_id):
+    return render_template('exercise_details.html', exercise_name=exercises[int(id) - 1].get_name(), exercise = exercises[int(id) - 1],user = users[int(id) - 1],id = id, exercise_id = exercise_id)
+
+
+# @app.route('/<username>/<id>/<exercise_id>/<workout_id>/register_exercise', methods=['POST'])
+# def register_exercise(username, id, exercise_id, workout_id):
+#     data = request.get_json()
+#
+#
+#     exercise = exercises[int(exercise_id) - 1]
+#     user = users[int(id) - 1]
+#     user.add_exercise(exercise, workout_id)
+#
+#     return jsonify({'message': 'Register successful!'}), 200
+
+@app.route('/register_exercise', methods=['POST'])
+def register_exercise():
+    data = request.get_json()
+    exercise_id = int(data.get('exercise_id'))
+    workout_index = int(data.get('workout_index'))
+    user_id = int(data.get('user_id'))
+
+    exercise = exercises[exercise_id - 1]
+    user = users[user_id - 1]
+
+    user.add_exercise(exercise, workout_index)
+
+    return jsonify({'message': exercise.get_name() + ' register successful! ' }), 200
+
+
 
 @app.route('/<username>/<id>/index')
 def index(username, id):

@@ -73,7 +73,7 @@ class User():
         if index == None:
             self.workouts[self.num_workouts - 1].add(exercise)
         else:
-            self.workouts[index].add()
+            self.workouts[index].add(exercise)
 
     def add_workout(self, workout):
         self.num_workouts += 1

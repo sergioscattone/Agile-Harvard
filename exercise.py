@@ -15,6 +15,9 @@ class Exercise():
     def get_name(self):
         return self.name
 
+    def get_id(self):
+        return self.id
+
     def show(self):
         print(self.name)
         print(self.description)
