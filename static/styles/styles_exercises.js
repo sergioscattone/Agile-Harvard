@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -59,10 +58,6 @@ document.addEventListener('DOMContentLoaded', function () {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 100%; /* Ensure all buttons are the same length */
             box-sizing: border-box;
-        }
-
-        .exercise-list a:nth-child(odd) {
-            background: linear-gradient(135deg, #ecdddd 30%, #008731 100%);
         }
 
         .exercise-list a:nth-child(even) {
