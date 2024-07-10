@@ -73,7 +73,7 @@ def logout():
 @app.route('/<username>/<id>/<exercise_id>/exercise_detail')
 def exercise_detail(username, id, exercise_id):
     check_username(username)
-    return render_template('exercise_details.html', exercise_name=exercises[int(id) - 1].get_name(), exercise = exercises[int(id) - 1],user = users[int(id) - 1],id = id, exercise_id = exercise_id)
+    return render_template('exercise_details.html', exercise_name=exercises[int(exercise_id) - 1].get_name(), exercise = exercises[int(exercise_id) - 1],user = users[int(id) - 1],id = id, exercise_id = exercise_id)
 
 
 # @app.route('/<username>/<id>/<exercise_id>/<workout_id>/register_exercise', methods=['POST'])
