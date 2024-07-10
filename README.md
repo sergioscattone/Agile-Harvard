@@ -149,3 +149,53 @@ we have our Continuous Delivery system that builds our application automagically
 | Ziyuan | We have several complete login/Sign up pages, plus some good looks of other pages | some unit tests were always failed, sometimes we lack of alignment with each others | need to remove gradients based on stakeholder feedback |
 | Marco | We were able to make some progress on the stakeholder UI requirements | We might need more stakeholder involvement | need to talk to stakeholder at least twice during the sprint |
 | Xingjian | We successfully built the pop system and the signup system | we did not cooperate with others well |  |
+
+# Third Sprint
+## Forcast for this sprint
+8 story points
+## Rationale
+Last sprint we completed 8 story points. We have more experience working with code now but we still have to increase the number of test and implement and start using behave. We also have to prepare the presentation for Thursday 7/11.
+
+## Sprint Backlog - Sprint Planning
+We have taken the next item in backlog which is the creation of workouts.
+We also made a ticket to implement BDD and the 10 new unit test that are required for the assignment.
+
+## Standup Meeting - Wednesday 10 (Third day of sprint)
+| Name          | What have you done so far | What you plan to do today | Any Blockers |
+| ------------- | ------------- | ------------- | ------------- |
+| Sergio | I've updated the readme file |  I plan start working on BDD and unit tests today | I don't know if I will finish all by tomorrow |
+| Ziyuan | |  |  |
+| Xingjian |  |  |
+| Marco |  |  |  |
+
+### What are the impediments? What is your impediment removal plan?
+We are meeting in classes before and after class in an intend to get stories done faster
+
+### What did you do in the last 24 hours that helped you meet the Sprint Goal?
+We have started to add the feature of creating workload that is our main goal for this sprint
+
+## Evidence of mob - pair programming
+Pending image...
+
+## Burndown for second sprint
+Pending image...
+
+## Sprint review - Feedback from Stakeholder
+Pending image...
+
+### Translated:
+
+## Continuous Delivery
+This haven't changed
+
+## Continuous Integration
+This haven't changed
+
+
+## Sprint Retrospective:
+| Name          | What went well | What went wrong | Action Items |
+| ------------- | ------------- | ------------- | ------------- |
+| Sergio |  |  |  |
+| Ziyuan |  |  |  |
+| Marco |  |  |  |
+| Xingjian |  |  |  |
