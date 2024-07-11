@@ -2,17 +2,18 @@ import datetime
 
 
 class Exercise_History():
-    history = []
-    def __init__(self, id: int, exercise, user):
-        self.id = id
-        self.exercise = exercise
-        self.user = user
+    def __init__(self, workout, user_id):
+        self.workout = workout
+        self.user_id = user_id
         self.timestamp = str(datetime.datetime.now())
-        Exercise_History.history.append(self)
 
-    def get_history_from_user(user):
-        history_user = []
-        for history in Exercise_History.history:
-            if history.user == user:
-                history_user.append(history)
-        return history_user
+
+    def get_workout(self):
+        return self.workout
+
+    def get_user(self):
+        return self.user
+
+    def get_time(self):
+        return self.timestamp.split()[0]
+

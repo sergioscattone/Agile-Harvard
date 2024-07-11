@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>MyWorkouts</title>
+    <title>MyHistory</title>
     <script src="{{ url_for('static', filename='styles/styles_exercises.js') }}" defer></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='styles/styles_myworkouts.js') }}"></script>
@@ -42,7 +42,8 @@
             text-decoration: none;
             font-size: 16px;
             cursor: pointer;
-            width: 80%;
+            width: 100%;
+            height : 50px;
             transition: background-color 0.3s ease;
             background: linear-gradient(135deg, #ecdddd 30%, #008731 100%);
         }
@@ -109,42 +110,32 @@
 </head>
 <body>
 <div class="container">
-    <h1>Workout List</h1>
+    <h1>My History</h1>
     <div class="exercise-list">
         <ul>
-            {% for i in range(user.get_num_workouts()) %}
+            {% for i in range(user.get_num_history()) %}
             <li>
                 <div style="display: flex;">
-                    <button class="toggleButton" data-target="info{{ i }}">{{ user.get_workout()[-i-1].get_self() }}</button>
-                    <a href="{{ url_for('workout_detail', username=user.get_username(), id=user.get_id(), workout_name=user.get_workout()[-i-1].get_self().replace(' ', '_'), workout_index=(user.get_num_workouts() - i - 1)) }}" class="detailed-page">Details Page</a>
-                </div>
+                    <button class="toggleButton" data-target="info{{ i }}">{{ user.get_history()[-i-1].get_workout().get_self() }}{{ " on " }}{{ user.get_history()[-i-1].get_time() }}</button>
+              </div>
                 <div id="info{{ i }}" class="info">
-                    {% for exercise in user.get_workout()[-i-1].get_exercises() %}
+                    {% for exercise in user.get_history()[-i-1].get_workout().get_exercises() %}
                     <div class="small-container">
                         <p>{{ exercise.get_name() }}</p>
                     </div>
                     {% endfor %}
-                <div class="small-container">
-                <button onclick = "add_to_history('{{ user.get_id() }}','{{ user.get_num_workouts() - i  - 1}}')">Add to history</button>
-                </div>
-                    <div class="small-container">
-                <button onclick = "delete_workout('{{ user.get_id() }}', '{{ user.get_num_workouts() - i - 1}}')">Delete workout</button>
-                </div>
                 </div>
             </li>
             {% endfor %}
         </ul>
     </div>
     <div class="button-container">
-        <a href="{{ url_for('create_page', username=user.get_username(), id=user.get_id()) }}" class="button">Create Workout</a>
         <div class="spring"></div>
         <button onclick="goBack()" class="button">Go back</button>
 
     </div>
-<div class = "spring"></div>
-<div class = index-container>
-    <a href = "{{ url_for('index', username = user.get_username(), id=user.get_id()) }}" class = 'index-button'>Go to index</a>
-</div>
+
+
 </div>
 <script>
     function goBack() {
