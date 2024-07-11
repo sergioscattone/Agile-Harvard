@@ -151,14 +151,23 @@ we have our Continuous Delivery system that builds our application automagically
 | Xingjian | We successfully built the pop system and the signup system | we did not cooperate with others well |  |
 
 # Third Sprint
+
 ## Forcast for this sprint
 8 story points
+
 ## Rationale
 Last sprint we completed 8 story points. We have more experience working with code now but we still have to increase the number of test and implement and start using behave. We also have to prepare the presentation for Thursday 7/11.
 
 ## Sprint Backlog - Sprint Planning
 We have taken the next item in backlog which is the creation of workouts.
 We also made a ticket to implement BDD and the 10 new unit test that are required for the assignment.
+
+## Behavior Driven Development
+We have created a BDD test that validates the flow of sign up as a new user:
+[user_signup.feature](features/user_signup.feature)
+
+## TDD: we have added 10 new unit test
+[Test File](tests/unit_tests.py)
 
 ## Standup Meeting - Wednesday 10 (Third day of sprint)
 | Name          | What have you done so far | What you plan to do today | Any Blockers |
