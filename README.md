@@ -184,15 +184,14 @@ We are meeting in classes before and after class in an intend to get stories don
 We have started to add the feature of creating workload that is our main goal for this sprint
 
 ## Evidence of mob - pair programming
-Pending image...
+![sprint3_mob_programming](sprint3_mob_programming.png)
 
 ## Burndown for third sprint
 ![sprint3_burndown](sprint3_burndown.png)
 
 ## Sprint review - Feedback from Stakeholder
-Pending image...
-
-### Translated:
+- Add explanatory videos for the exercises
+- Have a track of your exercises during the days
 
 ## Continuous Delivery
 We have added BDD and 10 new unit test to our continuous delivery check in Digital Ocean
