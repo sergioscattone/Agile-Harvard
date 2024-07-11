@@ -12,7 +12,7 @@ class Exercise_History():
         return self.workout
 
     def get_user(self):
-        return self.user
+        return self.user_id
 
     def get_time(self):
         return self.timestamp.split()[0]
