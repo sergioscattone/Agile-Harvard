@@ -173,7 +173,7 @@ We have created a BDD test that validates the flow of sign up as a new user:
 | Name          | What have you done so far | What you plan to do today | Any Blockers |
 | ------------- | ------------- | ------------- | ------------- |
 | Sergio | I've updated the readme file |  I plan start working on BDD and unit tests today | I don't know if I will finish all by tomorrow |
-| Ziyuan | |  |  |
+| Ziyuan | new workout functionality | pair program user registration | None |
 | Xingjian |  |  |
 | Marco | Finished exercise page for workouts | Going to add more unit tests | none |
 
@@ -207,6 +207,6 @@ Branches: https://github.com/sergioscattone/Agile-Harvard/branches
 | Name          | What went well | What went wrong | Action Items |
 | ------------- | ------------- | ------------- | ------------- |
 | Sergio | Considering we were only four, and with not much previous experience doing software / software with agile (except for me) I believe we meet our goals for the semester | Pushing all to main sometimes required maybe more coordination to don't break things | Don't start any story until it is assigned to someone in jira |
-| Ziyuan |  |  |  |
+| Ziyuan | Team collaborated well and everyone was self motivate | Lack of clear organization at times | Assign story to someone so that it's more clear for the team |
 | Marco | I think we had great autonomy | I think we could have had more assigned tasks | Need to assign story under a person or communicate with teammates during standup |
 | Xingjian |I think we have great improvement in the UI and add some new function.  | We fail to implement some functions we meant to. | We need to code more effectively. |
