@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>{{ exercise_name }} Detail Page</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ url_for('static', filename='styles/styles_exercise_register.js') }}"></script>
     <style>
         body {
             font-family: 'Roboto', sans-serif;
@@ -129,42 +130,6 @@
             <button onclick="goBack()" class="button">Go back</button>
         </div>
     </div>
-    <script>
-        function goBack() {
-            window.history.back();
-        }
 
-        function register(exercise_id, workout_index, user_id) {
-            console.log("Register function called");
-            console.log("Exercise ID:", exercise_id);
-            console.log("Workout Index:", workout_index);
-            console.log("User ID:", user_id);
-
-            $.ajax({
-                url: '/register_exercise',
-                type: 'POST',
-                contentType: 'application/json',
-                data: JSON.stringify({
-                    exercise_id: exercise_id,
-                    workout_index: workout_index,
-                    user_id: user_id
-                }),
-                success: function(response) {
-                    console.log("Response:", response);
-                    alert(response.message);
-                },
-                error: function(error) {
-                    console.log("Error:", error);
-                    alert('Error: ' + error.responseJSON.message);
-                }
-            });
-        }
-
-        $(document).ready(function() {
-            $('.toggleButton').click(function() {
-                $(this).next('.dropdown-content').toggle();
-            });
-        });
-    </script>
 </body>
 </html>
