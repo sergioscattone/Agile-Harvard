@@ -6,6 +6,7 @@ class Exercise():
         self.id = id
         self.name = name
         self.description = description
+        self.cite = ""
 
     def update(self, name: str, description: str):
         self.name = name
@@ -25,6 +26,11 @@ class Exercise():
     def __repr__(self):
         return f' {self.exercise}'
 
+    def get_dis(self):
+        return self.description
+
+    def set_cite(self, dis):
+        self.cite = dis
 
 Bicep_Curl = Exercise(1, 'Bicep Curl', 'Balabala')
 Jacknife_Situps = Exercise(2, 'Jacknife Situps', 'Balabala')
