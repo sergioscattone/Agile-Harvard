@@ -320,54 +320,11 @@ class Testing(unittest.TestCase):
         password = "password"
         user = User(id, email, password)
 
-        # Create exercise history for user\
+        # Create exercise history for user
         id = 1
-        user_exercise_history = Exercise_History(id, [first_exercise], user)
-        self.assertTrue(id, user_exercise_history.id)
-        self.assertTrue(first_exercise, user_exercise_history.exercise)
-        self.assertTrue(user, user_exercise_history.user)
-
-        Exercise_History.history = []
-        User.numbers = 0
-
-    # Fetch history of exercises for an user
-    def test_get_history_from_user(self):
-        # Create first user
-        id = 1
-        email = "user@email.com"
-        password = "password"
-        first_user = User(id, email, password)
-
-        # Create second user
-        id = 2
-        email = "user2@email.com"
-        password = "password2"
-        second_user = User(id, email, password)
-
-        amount_exercises_to_test = 3
-        exercises_created = []
-        for i in range(amount_exercises_to_test):
-            # Create exercise
-            exercise_id = i
-            exercise_name = "Exercise name " + str(i)
-            exercise_description = "Exercise description " + str(i)
-            exercise = Exercise(exercise_id, exercise_name, exercise_description)
-            # Create exercise history for user
-            exercises_created.append(exercise)
-            if i < 2:
-                Exercise_History(i, [exercise], first_user)
-            else:
-                Exercise_History(i, [exercise], second_user)
-
-        self.assertEqual(3, len(Exercise_History.history))
-        exercises_history = Exercise_History.get_history_from_user(first_user)
-        # history for first user should be only 2, not 3
-        self.assertEqual(amount_exercises_to_test - 1, len(exercises_history))
-
-        for i in range(len(exercises_history)):
-            self.assertEqual(exercises_created[i].id, exercises_history[i].id)
-            self.assertEqual(first_user, exercises_history[i].user)
-            self.assertIsNotNone(exercises_history[i].timestamp)
+        user_exercise_history = Exercise_History([first_exercise], user)
+        self.assertTrue([first_exercise], user_exercise_history.get_workout())
+        self.assertTrue(user.id, user_exercise_history.get_user())
 
         Exercise_History.history = []
         User.numbers = 0
@@ -473,10 +430,21 @@ class Testing(unittest.TestCase):
         user = User(1, 'test_user', 'password')
         exercise = Exercise(1, "Exercise 1", "Description 1")
         user.create_workout("Workout 1", "Description 1")
-        Exercise_History(1, [exercise], user)
-        history = Exercise_History.get_history_from_user(user)
+        user.add_exercise(exercise)
+        user.add_to_history(user.num_workouts-1)
+        history = user.get_history()
         self.assertEqual(1, len(history), "User should have 1 exercise in history")
-        self.assertEqual(exercise.id, history[0].exercise[0].id, "Exercise history should match the added exercise")
+        self.assertEqual(user.find_workout_by_name("Workout 1"), history[0].workout, "Exercise history should match the added exercise")
+
+    #test get workouts from exerciese history
+    def test_get_workout(self):
+        user = User(1, 'test_user', 'password')
+        id = 1
+        exercises = []
+        workout_description = "Workout description 1"
+        workout = Workout(id, exercises, workout_description)
+        exercise_history = Exercise_History(workout, user.id)
+        self.assertEqual(workout, exercise_history.get_workout())
 
 if __name__ == '__main__':
     unittest.main()

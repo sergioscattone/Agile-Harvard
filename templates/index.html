@@ -49,8 +49,9 @@
         <div class="button-container">
             <a href="{{ url_for('exercises_page', username = user.get_username(), id = user.get_id() )}}" class="button">Exercises</a>
             <a href="{{ url_for('workouts', username = user.get_username(), id = user.get_id() )}}" class="button">My Workouts</a>
+            <a href="{{ url_for('history', username = user.get_username(), id = user.get_id() )}}" class="button">My History</a>
             <div class="spring">
-            <button onclick = "goBack()" class="button">Log out</button>
+            <a href="{{ url_for('logout') }}" class="button">Log out</a>
             </div>
         </div>
         <!-- Commented until we work on login

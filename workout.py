@@ -16,6 +16,8 @@ class Workout:
                 self.name = self.name.replace("th", "st")
             if (id % 10 == 2) and (id % 100 != 12):
                 self.name = self.name.replace("th", "nd")
+            if (id % 10 == 3) and (id % 100 != 13):
+                self.name = self.name.replace("th", "rd")
 
     def add(self, exercise):
         self.exercises.append(exercise)

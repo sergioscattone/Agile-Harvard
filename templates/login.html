@@ -4,14 +4,15 @@
     This is the login page
 {% endblock %}
 
+
 {% block body %}
 <div class="login-container">
       <h2>Login</h2>
       <ul class="messages">
-        <li class="success">For Guest Use: <br />**Username** = user1 <br />**Password** = 123456</li>
+        <li class="success">For Guest Use: <br />**Username(Email)** = user1 <br />**Password** = 123456</li>
       </ul>
       <form method="POST" action="{{ url_for('login') }}">
-        <label for="username">Username:</label>
+        <label for="username">Email:</label>
         <input type="text" id="username" name="username" required>
         <br>
         <label for="password">Password:</label>

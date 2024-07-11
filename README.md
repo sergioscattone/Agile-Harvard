@@ -209,4 +209,4 @@ Branches: https://github.com/sergioscattone/Agile-Harvard/branches
 | Sergio | Considering we were only four, and with not much previous experience doing software / software with agile (except for me) I believe we meet our goals for the semester | Pushing all to main sometimes required maybe more coordination to don't break things | Don't start any story until it is assigned to someone in jira |
 | Ziyuan |  |  |  |
 | Marco | I think we had great autonomy | I think we could have had more assigned tasks | Need to assign story under a person or communicate with teammates during standup |
-| Xingjian |  |  |  |
+| Xingjian |I think we have great improvement in the UI and add some new function.  | We fail to implement some functions we meant to. | We need to code more effectively. |

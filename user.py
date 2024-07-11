@@ -1,5 +1,6 @@
 from workout import Workout
 from typing import List
+from exercise_history import Exercise_History
 
 
 class User():
@@ -13,6 +14,7 @@ class User():
         self.workouts: List[Workout] = []
         self.attempts = 0
         self.num_workouts = 0
+        self.exercise_history :List[Exercise_History] = []
 
     '''def update(self, first_name: str, last_name: str):
         self.first_name = first_name
@@ -98,3 +100,15 @@ class User():
     def remove_workout_by_name(self, name):
         workout = self.find_workout_by_name(name)
         self.remove_workout_by_id(workout.id)
+
+    def delete_workout_by_id(self, id):
+        self.workouts.pop(id)
+        self.num_workouts -= 1
+
+    def add_to_history(self, workout_index):
+        self.exercise_history.append(Exercise_History(self.workouts[workout_index], user_id = self.id))
+
+    def get_num_history(self) -> int:
+        return len(self.exercise_history)
+    def get_history(self):
+        return self.exercise_history
