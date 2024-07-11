@@ -26,10 +26,10 @@ class Exercise():
         return f' {self.exercise}'
 
 
-Bicep_Curl = Exercise(1, 'Bicep Curl', 'Balabala')
-Jacknife_Situps = Exercise(2, 'Jacknife Situps', 'Balabala')
-Swimming = Exercise(3, 'Swimming', 'Balabala')
-Jogging = Exercise(4, 'Jogging', 'Balabala')
+Bicep_Curl = Exercise(1, 'Bicep Curl', 'Curling exercise working the biceps brachii muscle where the elbow is stationary and the arm slowly bends from an overstretched position to a folded one.')
+Jacknife_Situps = Exercise(2, 'Jacknife Situps', 'Exercise where a person laying on a flat surface folds their body such that the tip of their toes touches the tip of the fingers.')
+Swimming = Exercise(3, 'Swimming', 'A popular recreational exercise that involves moving in a body of water. Useful for cardio and training of the whole body, with an emphasis on upper body.')
+Jogging = Exercise(4, 'Jogging', 'TODO')
 Hiking = Exercise(5, 'Hiking', 'Balabala')
 Table_Tennis = Exercise(6, 'Table Tennis', 'Balabala')
 More = Exercise(7, 'More', 'Balabala')
