@@ -178,7 +178,7 @@ We have started to add the feature of creating workload that is our main goal fo
 Pending image...
 
 ## Burndown for third sprint
-Pending image...
+![sprint3_burndown](sprint3_burndown.png)
 
 ## Sprint review - Feedback from Stakeholder
 Pending image...
@@ -186,16 +186,18 @@ Pending image...
 ### Translated:
 
 ## Continuous Delivery
-This has't changed
+We have added BDD and 10 new unit test to our continuous delivery check in Digital Ocean
+![bdd](bdd.png)
 
 ## Continuous Integration
-This has't changed
-
+We continued to work on a single main branch fixing the issues that appear there right away as a team.
+Branches: https://github.com/sergioscattone/Agile-Harvard/branches
+![main_branch](main_branch.png)
 
 ## Sprint Retrospective:
 | Name          | What went well | What went wrong | Action Items |
 | ------------- | ------------- | ------------- | ------------- |
-| Sergio |  |  |  |
+| Sergio | Considering we were only four, and with not much previous experience doing software / software with agile (except for me) I believe we meet our goals for the semester | Pushing all to main sometimes required maybe more coordination to don't break things | Don't start any story until it is assigned to someone in jira |
 | Ziyuan |  |  |  |
 | Marco | I think we had great autonomy | I think we could have had more assigned tasks | Need to assign story under a person or communicate with teammates during standup |
 | Xingjian |  |  |  |
