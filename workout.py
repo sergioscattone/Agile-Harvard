@@ -1,4 +1,6 @@
 from typing import List
+
+import exercise
 from exercise import Exercise
 
 
@@ -22,6 +24,9 @@ class Workout:
     def remove(self, exercise):
         self.exercises.remove(exercise)
         return self
+
+    def remove_by_index(self, index):
+        self.exercises.pop(index)
 
     def find(self, exercise_id: int):
         for exercise in self.exercises:

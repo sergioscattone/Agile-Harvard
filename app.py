@@ -105,16 +105,17 @@ def register_exercise():
 @app.route('/delete_exercise', methods=['POST'])
 def delete_exercise():
     data = request.get_json()
-    exercise_id = int(data.get('exercise_id'))
+    exercise_index = int(data.get('exercise_id'))
     workout_index = int(data.get('workout_index'))
     user_id = int(data.get('user_id'))
 
-    exercise = exercises[exercise_id - 1]
     user = users[user_id - 1]
 
-    user.get_workout()[workout_index].remove(exercise)
+    name = user.get_workout()[workout_index].get_exercises()[exercise_index].get_name()
 
-    return jsonify({'message': ' delete successful! ' }), 200
+    user.get_workout()[workout_index].remove_by_index(exercise_index)
+
+    return jsonify({'message': name + ' deleted successful! ' }), 200
 
 @app.route('/<username>/<id>/index')
 def index(username, id):
@@ -136,7 +137,7 @@ def workouts(username, id):
 @app.route('/<username>/<id>/workouts/<workout_name>/<workout_index>')
 def workout_detail(username, id, workout_name, workout_index):
     user = users[int(id) - 1]
-    return render_template('workout_details.html', username=username, id=id, user=user, workout_name=workout_name, workout_index=workout_index,exercises = exercises)
+    return render_template('workout_details.html', username=username, uid=id, user=user, workout_name=workout_name, workout_index=workout_index,exercises = exercises)
 
 @app.route('/')
 def landscape():
