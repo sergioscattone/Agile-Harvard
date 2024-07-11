@@ -174,7 +174,7 @@ We have created a BDD test that validates the flow of sign up as a new user:
 | ------------- | ------------- | ------------- | ------------- |
 | Sergio | I've updated the readme file |  I plan start working on BDD and unit tests today | I don't know if I will finish all by tomorrow |
 | Ziyuan | new workout functionality | pair program user registration | None |
-| Xingjian |  |  |
+| Xingjian | I have made the deletion and the registeration for workout and exercise.  | Make the UI better |None|
 | Marco | Finished exercise page for workouts | Going to add more unit tests | none |
 
 ### What are the impediments? What is your impediment removal plan?

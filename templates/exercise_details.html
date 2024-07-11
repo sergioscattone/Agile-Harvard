@@ -103,6 +103,16 @@
             background-color: #0065b3;
         }
     </style>
+    <script>
+              $(document).ready(function() {
+                  if ('{{ exercise.get_name() }}' === 'Basketball') {
+                document.body.style.backgroundImage = 'url(/static/images/img.png)';
+                }
+            });
+
+            // Change background color if exercise name is basketball
+
+    </script>
 </head>
 <body>
     <div class="container">
