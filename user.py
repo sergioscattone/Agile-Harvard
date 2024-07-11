@@ -94,3 +94,7 @@ class User():
 
     def display(self):
         return self.email + str(self.id)
+    
+    def remove_workout_by_name(self, name):
+        workout = self.find_workout_by_name(name)
+        self.remove_workout_by_id(workout.id)

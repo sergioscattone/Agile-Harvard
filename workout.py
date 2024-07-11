@@ -30,14 +30,20 @@ class Workout:
 
     def get_name(self):
         return self.name
+
     def get_self(self, name_needed = False):
         result = self.name + '\n'
         if name_needed:
             for exercise in self.exercises:
                 result += str(exercise.get_name()) + "\n\t"
         return result
+
     def get_exercises(self):
         return self.exercises
+
+    def update_description(self, new_description):
+        self.description = new_description
+        return self
 
 """    def __repr__(self):
         return f' {self.exercises}'"""

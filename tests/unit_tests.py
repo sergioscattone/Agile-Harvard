@@ -4,7 +4,6 @@ from exercise_history import Exercise_History
 from workout import Workout
 from user import User
 
-
 class Testing(unittest.TestCase):
     def test_framework_works(self):
         self.assertEqual(True, True)
@@ -407,6 +406,77 @@ class Testing(unittest.TestCase):
         self.assertEqual(1, user.get_num_workouts())
         workout = user.find_workout_by_name("test workout")
         self.assertTrue(workout is not None)
+
+    def test_update_workout_description(self):
+        id = 1
+        exercises = []
+        workout_description = "Workout description 1"
+        workout = Workout(id, exercises, workout_description)
+        new_description = "Updated workout description"
+        workout.update_description(new_description)
+        self.assertEqual(new_description, workout.description, "Workout description did not update correctly")
+
+    def test_register_exercise_to_workout(self):
+        user = User(1, 'test_user', 'password')
+        user.create_workout()
+        initial_workouts_count = len(user.get_workout())
+        exercise = Exercise(1, "Test Exercise", "Test Description")
+        user.add_exercise(exercise, 0)
+        self.assertEqual(len(user.get_workout()), initial_workouts_count, "Exercise was not registered correctly")
+
+    def test_create_multiple_workouts_for_user(self):
+        user = User(1, 'test_user', 'password')
+        user.create_workout("Workout 1", "Description 1")
+        user.create_workout("Workout 2", "Description 2")
+        self.assertEqual(2, user.get_num_workouts(), "User should have 2 workouts")
+
+    def test_find_workout_by_name(self):
+        user = User(1, 'test_user', 'password')
+        user.create_workout("Test Workout", "Test Description")
+        workout = user.find_workout_by_name("Test Workout")
+        self.assertIsNotNone(workout, "Workout should be found by name")
+
+    def test_remove_workout_by_name(self):
+        user = User(1, 'test_user', 'password')
+        user.create_workout("Test Workout", "Test Description")
+        user.remove_workout_by_name("Test Workout")
+        self.assertIsNone(user.find_workout_by_name("Test Workout"), "Workout should be removed by name")
+
+    def test_create_workout_with_exercises(self):
+        user = User(1, 'test_user', 'password')
+        exercise = Exercise(1, "Exercise 1", "Description 1")
+        user.create_workout("Test Workout", "Test Description")
+        user.add_exercise(exercise)
+        workout = user.find_workout_by_name("Test Workout")
+        self.assertEqual(1, len(workout.exercises), "Workout should have 1 exercise")
+
+    def test_user_workout_count(self):
+        user = User(1, 'test_user', 'password')
+        initial_count = user.get_num_workouts()
+        user.create_workout("Workout 1", "Description 1")
+        user.create_workout("Workout 2", "Description 2")
+        self.assertEqual(initial_count + 2, user.get_num_workouts(), "User workout count should increment correctly")
+
+    def test_user_login_different_credentials(self):
+        user = User(1, 'test_user', 'password')
+        self.assertTrue(user.able_to_login('test_user', 'password'), "User should be able to login with correct credentials")
+        self.assertFalse(user.able_to_login('test_user', 'wrong_password'), "User should not be able to login with incorrect credentials")
+
+    def test_deactivate_user_manually(self):
+        user = User(1, 'test_user', 'password')
+        user.activate()
+        self.assertTrue(user.active, "User should be active after activation")
+        user.deactivate()
+        self.assertFalse(user.active, "User should be deactivated manually")
+
+    def test_exercise_history_after_adding_exercises(self):
+        user = User(1, 'test_user', 'password')
+        exercise = Exercise(1, "Exercise 1", "Description 1")
+        user.create_workout("Workout 1", "Description 1")
+        Exercise_History(1, [exercise], user)
+        history = Exercise_History.get_history_from_user(user)
+        self.assertEqual(1, len(history), "User should have 1 exercise in history")
+        self.assertEqual(exercise.id, history[0].exercise[0].id, "Exercise history should match the added exercise")
 
 if __name__ == '__main__':
     unittest.main()

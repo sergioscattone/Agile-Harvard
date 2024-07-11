@@ -77,7 +77,7 @@ Also we are using pre and post class time to have meetings and do mob programmin
 ![mob programming](mob_programming.png)
 
 ## TDD: Set of unit test attached to CI in Digital Ocean
-[Test File](unit_tests.py)
+[Test File](tests/unit_tests.py)
 
 ## Sprint review - Feedback from Stakeholder
 ![feedback](feedback.png)
@@ -166,7 +166,7 @@ We also made a ticket to implement BDD and the 10 new unit test that are require
 | Sergio | I've updated the readme file |  I plan start working on BDD and unit tests today | I don't know if I will finish all by tomorrow |
 | Ziyuan | |  |  |
 | Xingjian |  |  |
-| Marco |  |  |  |
+| Marco | Finished exercise page for workouts | Going to add more unit tests | none |
 
 ### What are the impediments? What is your impediment removal plan?
 We are meeting in classes before and after class in an intend to get stories done faster
@@ -177,8 +177,8 @@ We have started to add the feature of creating workload that is our main goal fo
 ## Evidence of mob - pair programming
 Pending image...
 
-## Burndown for second sprint
-Pending image...
+## Burndown for third sprint
+![sprint3_burndown](sprint3_burndown.png)
 
 ## Sprint review - Feedback from Stakeholder
 Pending image...
@@ -186,16 +186,18 @@ Pending image...
 ### Translated:
 
 ## Continuous Delivery
-This has't changed
+We have added BDD and 10 new unit test to our continuous delivery check in Digital Ocean
+![bdd](bdd.png)
 
 ## Continuous Integration
-This has't changed
-
+We continued to work on a single main branch fixing the issues that appear there right away as a team.
+Branches: https://github.com/sergioscattone/Agile-Harvard/branches
+![main_branch](main_branch.png)
 
 ## Sprint Retrospective:
 | Name          | What went well | What went wrong | Action Items |
 | ------------- | ------------- | ------------- | ------------- |
-| Sergio |  |  |  |
+| Sergio | Considering we were only four, and with not much previous experience doing software / software with agile (except for me) I believe we meet our goals for the semester | Pushing all to main sometimes required maybe more coordination to don't break things | Don't start any story until it is assigned to someone in jira |
 | Ziyuan |  |  |  |
-| Marco |  |  |  |
+| Marco | I think we had great autonomy | I think we could have had more assigned tasks | Need to assign story under a person or communicate with teammates during standup |
 | Xingjian |  |  |  |
