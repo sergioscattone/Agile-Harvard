@@ -166,7 +166,7 @@ We also made a ticket to implement BDD and the 10 new unit test that are require
 | Sergio | I've updated the readme file |  I plan start working on BDD and unit tests today | I don't know if I will finish all by tomorrow |
 | Ziyuan | |  |  |
 | Xingjian |  |  |
-| Marco |  |  |  |
+| Marco | Finished exercise page for workouts | Going to add more unit tests | none |
 
 ### What are the impediments? What is your impediment removal plan?
 We are meeting in classes before and after class in an intend to get stories done faster
@@ -197,5 +197,5 @@ This has't changed
 | ------------- | ------------- | ------------- | ------------- |
 | Sergio |  |  |  |
 | Ziyuan |  |  |  |
-| Marco |  |  |  |
+| Marco | I think we had great autonomy | I think we could have had more assigned tasks | Need to assign story under a person or communicate with teammates during standup |
 | Xingjian |  |  |  |
