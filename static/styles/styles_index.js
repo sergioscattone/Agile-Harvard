@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -87,7 +86,6 @@ document.addEventListener('DOMContentLoaded', function () {
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s ease;
-            background: linear-gradient(135deg, #ecdddd 30%, #008731 100%);
         }
 
         input[type="submit"]:hover {
