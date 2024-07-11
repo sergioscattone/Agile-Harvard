@@ -77,7 +77,7 @@ Also we are using pre and post class time to have meetings and do mob programmin
 ![mob programming](mob_programming.png)
 
 ## TDD: Set of unit test attached to CI in Digital Ocean
-[Test File](unit_tests.py)
+[Test File](tests/unit_tests.py)
 
 ## Sprint review - Feedback from Stakeholder
 ![feedback](feedback.png)
@@ -177,7 +177,7 @@ We have started to add the feature of creating workload that is our main goal fo
 ## Evidence of mob - pair programming
 Pending image...
 
-## Burndown for second sprint
+## Burndown for third sprint
 Pending image...
 
 ## Sprint review - Feedback from Stakeholder
