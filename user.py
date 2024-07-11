@@ -98,3 +98,7 @@ class User():
     def remove_workout_by_name(self, name):
         workout = self.find_workout_by_name(name)
         self.remove_workout_by_id(workout.id)
+
+    def delete_workout_by_id(self, id):
+        self.workouts.pop(id)
+        self.num_workouts -= 1

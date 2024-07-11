@@ -117,6 +117,17 @@ def delete_exercise():
 
     return jsonify({'message': name + ' deleted successful! ' }), 200
 
+@app.route('/delete_workout', methods=['POST'])
+def delete_workout():
+    data = request.get_json()
+    workout_index = int(data.get('workout_index'))
+    user_id = int(data.get('user_id'))
+    user = users[user_id - 1]
+    name = user.get_workout()[workout_index].get_name()
+    user.delete_workout_by_id(workout_index)
+    return jsonify({'message': name + ' deleted successful! '}), 200
+
+
 @app.route('/<username>/<id>/index')
 def index(username, id):
     if username == session['username']:

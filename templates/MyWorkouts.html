@@ -50,6 +50,14 @@
             background-color: #039f5b;
             transform: translateY(-2px);
         }
+                .button:hover {
+            background-color: #039f5b;
+            transform: translateY(-2px);
+        }
+        .index-button:hover {
+            background-color: #039f5b;
+            transform: translateY(-2px);
+        }
         .info {
             display: none;
             margin-top: 10px;
@@ -75,6 +83,27 @@
     background: linear-gradient(135deg, #ecdddd 30%, #008731 100%);
 }
 
+.index-button{
+    width : 800px;
+    padding: 10px 20px;
+    background-color: #04AA6D;
+    color: #000000;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            background: linear-gradient(135deg, #ecdddd 30%, #008731 100%);
+}
+
+.index-container{
+    display: flex;
+            width: 25%;
+            justify-content: space-between;
+            margin-top: 5px;
+}
+
 
     </style>
 </head>
@@ -95,6 +124,9 @@
                         <p>{{ exercise.get_name() }}</p>
                     </div>
                     {% endfor %}
+                <div class="small-container">
+                <button onclick = "delete_workout('{{ user.get_id() }}', '{{ i }}')">Delete workout</button>
+                </div>
                 </div>
             </li>
             {% endfor %}
@@ -104,12 +136,40 @@
         <a href="{{ url_for('create_page', username=user.get_username(), id=user.get_id()) }}" class="button">Create Workout</a>
         <div class="spring"></div>
         <button onclick="goBack()" class="button">Go back</button>
+
     </div>
+<div class = "spring"></div>
+<div class = index-container>
+    <a href = "{{ url_for('index', username = user.get_username(), id=user.get_id()) }}" class = 'index-button'>Go to index</a>
+</div>
 </div>
 <script>
     function goBack() {
         window.history.back();
     }
+     function delete_workout(id, workout_index) {
+        console.log("Delete_workout function called");
+        console.log("Workout Index:", workout_index);
+        console.log("User ID:", id);
+
+        $.ajax({
+            url: '/delete_workout',
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                workout_index: workout_index,
+                user_id: id
+            }),
+            success: function(response) {
+                console.log("Response:", response);
+                alert(response.message);
+                location.reload();
+            },
+            error: function(error) {
+                console.log("Error:", error);
+                alert('Error: ' + error.responseJSON.message);
+            }
+        });}
 
     $(document).ready(function() {
         $('.toggleButton').click(function() {
