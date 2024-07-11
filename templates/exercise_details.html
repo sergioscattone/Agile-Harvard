@@ -14,6 +14,10 @@
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    background-attachment: fixed;
         }
         .button-container {
             display: flex;
@@ -107,8 +111,8 @@
     </style>
     <script>
               $(document).ready(function() {
-                  if ('{{ exercise.get_name() }}' === 'Basketball') {
-                document.body.style.backgroundImage = 'url(/static/images/img.png)';
+                  if ("{{ exercise.have_bg() }}" === "True") {
+                document.body.style.backgroundImage = "{{exercise.bg}}";
                 }
             });
 
