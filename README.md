@@ -5,7 +5,7 @@
 | Sergio Scattone | Developer / Scrum Master  |
 | Marco Vazquez   | Developer / Product Owner  |
 | Ziyuan Li | Developer  |
-| Zhang Xingjian | Developer  |
+| ZHANG Xingjian | Developer  |
 ## APP URL
 https://octopus-app-h8uaj.ondigitalocean.app/
 ## Slack Channel
